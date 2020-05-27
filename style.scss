@@ -138,20 +138,19 @@ i {
 // layout
 
 #app {
-	overscroll-behavior: contain;
-	position: absolute;
-	top: 0;
-	right: 0;
+	-webkit-overflow-scrolling: touch;
 	bottom: 0;
 	left: 0;
-	-webkit-overflow-scrolling: touch;
+	position: absolute;
+	right: 0;
+	top: 0;
 }
 
 #home {
 	display: flex;
 	flex-direction: column;
 
-	padding: 64px 0 122px;
+	padding: 20px 0 122px;
 
 	.home-nav {
 		display: flex;
@@ -227,9 +226,99 @@ i {
 						margin-right: 8px;
 					}
 
-					.feed-card-content {
+					.feed-card-aspect-ratio {
+						@include border-radius(8px);
 						display: block;
 						padding-top: calc(16 / 9 * 100%);
+						position: relative;
+
+						.feed-card-content {
+							background: $blackDark-50;
+							@include border-radius(8px);
+							bottom: 0;
+							left: 0;
+							position: absolute;
+							right: 0;
+							top: 0;
+							text-align: center;
+
+							img {
+								height: auto;
+								margin-top: 24px;
+								width: 60%;
+							}
+
+							.feed-card-text {
+								bottom: 0;
+								left: 0;
+								padding: 8px;
+								position: absolute;
+								right: 0;
+								text-align: left;
+
+								.feed-card-title {
+									@extend .font-14;
+									@extend .bold;
+
+									display: block;
+									line-height: 16px;
+									margin-bottom: 4px;
+								}
+
+								.feed-card-meta {
+									display: block;
+									@extend .font-12;
+								}
+							}
+						}
+					}
+
+					&.feed-card-onboarding {
+						@extend .color-blackDark-100;
+
+						background: $yellow-100;
+						border: 1px solid $blackDark-10;
+
+						.feed-card-aspect-ratio .feed-card-content {
+							background: none;
+
+						 	.feed-card-text {
+								.feed-card-title {
+									@extend .font-20;
+									@extend .bold;
+
+									display: block;
+									line-height: 24px;
+									margin-bottom: 4px;
+								}
+
+								.feed-card-meta {
+									@extend .font-14;
+									display: block;
+								}
+							}
+						}
+					}
+
+					&.feed-card-add-rating .feed-card-aspect-ratio .feed-card-content {
+						@extend .color-white-50;
+
+						i {
+							left: 8px;
+							position: absolute;
+							top: 8px;
+						}
+
+						.feed-card-text {
+							.feed-card-title {
+								@extend .font-20;
+								@extend .bold;
+
+								display: block;
+								line-height: 24px;
+								margin-bottom: 4px;
+							}
+						}
 					}
 				}
 			}
@@ -238,12 +327,26 @@ i {
 }
 
 #bottom-nav {
+	align-items: center;
 	background: $blackLight-100;
 	bottom: 0;
 	box-shadow: inset 0 1px $white-10;
+	display: flex;
+	flex-direction: row;
 	height: 90px;
+	justify-content: space-around;
+	padding: 0 35px 34px;
 	position: fixed;
 	width: 100%;
+
+	.btn {
+		padding: 8px;
+	}
+
+	.add-rating {
+		@include border-radius(50%);
+		background: $white-100;
+	}
 }
 
 
