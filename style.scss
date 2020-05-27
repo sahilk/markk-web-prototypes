@@ -60,6 +60,11 @@ i {
 	vertical-align: middle;
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
 // utilities
 
 .color-yellow-100 { color: $yellow-100; }
