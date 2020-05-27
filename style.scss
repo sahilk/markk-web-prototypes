@@ -1,0 +1,267 @@
+@import url('https://meyerweb.com/eric/tools/css/reset/reset.css');
+@import url('https://rsms.me/inter/inter.css');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Round');
+
+$font: 'Inter', sans-serif;
+$yellow-100: #f8b216;
+$blackDark-100: #000000;
+$blackDark-75: rgba($blackDark-100, .75);
+$blackDark-50: rgba($blackDark-100, .50);
+$blackDark-25: rgba($blackDark-100, .25);
+$blackDark-10: rgba($blackDark-100, .10);
+$blackLight-100: #0d0d0d;
+$green-100: #5ac29a;
+$green-200: #3da47d;
+$red-100: #f15535;
+$red-200: #e33410;
+$white-100: #f3f3f4;
+$white-75: rgba($white-100, .75);
+$white-50: rgba($white-100, .50);
+$white-25: rgba($white-100, .25);
+$white-10: rgba($white-100, .10);
+$white-pure: #ffffff;
+$grey-100: #3d3d3d;
+$grey-200: #1f1f1f;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// elements
+
+html, body {
+	background: $blackDark-100;
+	color: $white-100;
+	font-family: $font;
+	font-size: 16px;
+	line-height: 24px;
+	overscroll-behavior: none;
+	-webkit-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+a {
+	color: inherit;
+	display: inline-block;
+	text-decoration: none;
+}
+
+i {
+	vertical-align: middle;
+}
+
+// utilities
+
+.color-yellow-100 { color: $yellow-100; }
+.color-blackDark-100 { color: $blackDark-100; }
+.color-blackDark-75 { color: $blackDark-75; }
+.color-blackDark-50 { color: $blackDark-50; }
+.color-blackDark-25 { color: $blackDark-25; }
+.color-blackDark-10 { color: $blackDark-10; }
+.color-white-100 { color: $white-100; }
+.color-white-75 { color: $white-75; }
+.color-white-50 { color: $white-50; }
+.color-white-25 { color: $white-25; }
+.color-white-10 { color: $white-10; }
+
+// text styles
+
+.font-12 {
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.font-14 {
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.font-20 {
+	font-size: 20px;
+	line-height: 28px;
+}
+
+.font-24 {
+	font-size: 24px;
+	line-height: 32px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.lowercase {
+	text-transform: lowercase;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+// components
+
+.btn {
+	@extend .font-14;
+	@extend .bold;
+	@extend .uppercase;
+
+	display: inline-block;
+
+	span {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	&.btn-regular {
+		background: $white-100;
+		border: 1px solid $blackDark-10;
+		@include border-radius(24px);
+		color: $blackDark-100;
+		padding: 14px 24px;
+	}
+}
+
+// layout
+
+#app {
+	overscroll-behavior: contain;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	-webkit-overflow-scrolling: touch;
+}
+
+#home {
+	display: flex;
+	flex-direction: column;
+
+	padding: 64px 0 122px;
+
+	.home-nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+
+		margin-bottom: 32px;
+		padding: 0 16px;
+
+		.btn {
+			@extend .capitalize;
+			@extend .color-white-100;
+
+			background: $grey-200;
+			border: 1px solid $white-10;
+			
+			&.btn-icon-text {
+				padding: 7px 11px 7px 7px;
+
+				i {
+					margin-right: 4px;
+				}
+			}
+
+			&.btn-icon {
+				padding: 7px;
+			}
+		}
+	}
+
+	.home-feed {
+		display: flex;
+		flex-direction: column;
+
+		.feed-tabs {
+			display: flex;
+			flex-direction: row;
+
+			margin-bottom: 16px;
+			padding: 8px 16px;
+
+			.feed-tab {
+				@extend .bold;
+				@extend .color-white-100;
+				@extend .font-24;
+
+				margin-right: 16px;
+
+				&.inactive {
+					@extend .color-white-50;
+				}
+			}
+		}
+
+		.feed-cards {
+			.feed-nearby, .feed-everywhere {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+
+				.feed-card {
+					@extend .color-white-100;
+					@include border-radius(8px);
+
+					background: $blackLight-100;
+					border: 1px solid $white-10;
+					margin-bottom: 8px;
+					width: calc((100% - 40px) / 2);
+
+					&:nth-child(odd) {
+						margin-left: 16px;
+						margin-right: 8px;
+					}
+
+					.feed-card-content {
+						display: block;
+						padding-top: calc(16 / 9 * 100%);
+					}
+				}
+			}
+		}
+	}
+}
+
+#bottom-nav {
+	background: $blackLight-100;
+	bottom: 0;
+	box-shadow: inset 0 1px $white-10;
+	height: 90px;
+	position: fixed;
+	width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
