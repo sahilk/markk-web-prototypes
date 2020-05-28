@@ -26,7 +26,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
-	<link href="style-2020-05-28-1.css" rel="stylesheet">
+	<link href="style-2020-05-28-2.css" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
 
 	<link href="img/favicon.png" rel="shortcut icon">
@@ -61,7 +61,7 @@
 						</li> <!-- .feed-card .feed-card-onboarding -->
 
 						<li class="feed-card feed-card-place">
-							<span class="feed-card-aspect-ratio" style="background: url('https://source.unsplash.com/random/500x500/?bar'); background-size: cover;">
+							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/random/500x500/?bar">
 								<span class="feed-card-content">
 									<img src="img/rating-label-dope.png">
 									<span class="feed-card-text">
@@ -73,7 +73,7 @@
 						</li> <!-- .feed-card .feed-card-place -->
 
 						<li class="feed-card feed-card-place">
-							<span class="feed-card-aspect-ratio" style="background: url('https://source.unsplash.com/random/500x500/?restaurant'); background-size: cover;">
+							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/random/500x500/?restaurant">
 								<span class="feed-card-content">
 									<img src="img/rating-label-dope.png">
 									<span class="feed-card-text">
@@ -85,12 +85,60 @@
 						</li> <!-- .feed-card .feed-card-place -->
 
 						<li class="feed-card feed-card-place">
-							<span class="feed-card-aspect-ratio" style="background: url('https://source.unsplash.com/random/500x500/?cafe'); background-size: cover;">
+							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/random/500x500/?cafe">
 								<span class="feed-card-content">
 									<img src="img/rating-label-okay.png">
 									<span class="feed-card-text">
 										<span class="feed-card-title">Third Wave Coffee</span>
 										<span class="feed-card-meta">Cafe • 2 mi</span>
+									</span>
+								</span>
+							</span>
+						</li> <!-- .feed-card .feed-card-place -->
+
+						<li class="feed-card feed-card-place">
+							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/random/500x500/?office">
+								<span class="feed-card-content">
+									<img src="img/rating-label-nope.png">
+									<span class="feed-card-text">
+										<span class="feed-card-title">91Springboard Yerwada</span>
+										<span class="feed-card-meta">Coworking Space • 2 mi</span>
+									</span>
+								</span>
+							</span>
+						</li> <!-- .feed-card .feed-card-place -->
+
+						<li class="feed-card feed-card-place">
+							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/random/500x500/?park">
+								<span class="feed-card-content">
+									<img src="img/rating-label-okay.png">
+									<span class="feed-card-text">
+										<span class="feed-card-title">Empress Garden</span>
+										<span class="feed-card-meta">Park • 2 mi</span>
+									</span>
+								</span>
+							</span>
+						</li> <!-- .feed-card .feed-card-place -->
+
+						<li class="feed-card feed-card-place">
+							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/random/500x500/?art">
+								<span class="feed-card-content">
+									<img src="img/rating-label-dope.png">
+									<span class="feed-card-text">
+										<span class="feed-card-title">Tilting Art Gallery</span>
+										<span class="feed-card-meta">Art Gallery • 2 mi</span>
+									</span>
+								</span>
+							</span>
+						</li> <!-- .feed-card .feed-card-place -->
+
+						<li class="feed-card feed-card-place">
+							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/random/500x500/?shopping">
+								<span class="feed-card-content">
+									<img src="img/rating-label-dope.png">
+									<span class="feed-card-text">
+										<span class="feed-card-title">Phoenix Marketcity</span>
+										<span class="feed-card-meta">Shopping Mall • 2 mi</span>
 									</span>
 								</span>
 							</span>
@@ -119,4 +167,34 @@
 			<li class="btn btn-borderless"><a href="#"><i class="material-icons-round color-white-50">person</i></a></li>
 		</ul> <!-- #bottom-nav -->
 	</div> <!-- #app -->
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+	<script type="text/javascript">
+		var classNames = [];
+		if (navigator.userAgent.match(/(iPad|iPhone|iPod)/i)) classNames.push('device-ios');
+		if (navigator.userAgent.match(/android/i)) classNames.push('device-android');
+
+		var html = document.getElementsByTagName('html')[0];
+
+		if (classNames.length) classNames.push('on-device');
+		if (html.classList) html.classList.add.apply(html.classList, classNames);
+
+		$(function() {
+			$('.lazy').Lazy({
+				delay: 1200,
+				effect: 'fadeIn',
+				effectTime: 1200,
+				placeholder: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAADtklEQVRIx22WUZbrOA5DLxj32mcjvYLZ3sS480E5qXrdKh2XrMggCZKw85+//xuYMOEKV/hruMa/wjVc8RpeceJgABTUyi23ee/sszBv55aakgEA+Q6/dx5Az56fnV/Df9l5xrXHc57H7L/z94Hfvexa/PXDCUzR7NGPL5cSMI9RPQ+j1eHgqNlHOTYWDm10jgvnyfiEcf3CfaK1Gg2qqVnP5JODL3OL3sfGMcGJMpcPfWJlsfpcGwebJvaJc52okWiqZSp1eoLz48u1N7O2Q13fW76L7JU+BhAKJXXKfLMCOqJk47nqyWtxVGwsle4iNJQ0JwIfAylTKlNe1T77qlRGuKxAMVAsLRXLvetj4CzklEl65qux0GdTKpQTx4ciN4JSbWm5a8sd7kX400BSprG8lruCyVoSi8KhqBqsHVpb7zO54w23dg7tAIYyd6ZZJm0W/TYplZhKLtsTgcbf6H3XO77hxvuhQaCJGfNqFpomTczBNdXNgT5tWFvd623ferfv+I7vro3ttWCm6/7Y0MRZkzU10WxTXz7toS56ez/zPX3X/8X3LF2ULaaMmY4WJ040zjw2IiGwFGV757h/Pzzd9kRg3y5RW4SJmc5LcU6/OK8VUFOWK2O4PvLBzwo6Zm77PvNPA3kEK8zAC254mW3qYTXGXNhHC9XyEEVvez/G7p8GSB6dDxkcvPFly9RuhwSAuY7g6hbbabXv+qbFG7sGwtFfDN7x9Tkctqa27QKBXtg8sp8lajv6c31mbFI0x7uGjzAaS/YRf8hVrnCE+WnXc/u8IyTPgZh9MUUCOTvJ0cGTnZUWH4piAwdicXPQN5eBzGImJNEk+4IOhsGG4Kw4KjRJDPTK96Rx3+xOTiKz7poxIZMQkpA0mXOaiR63/UCRQq7x8RcnT5gxQ8pMxgyJmSRMThUlX21YqThfHk3DQONS9EF/aBnIMGUmh2oyzMCKwkZnhgxk22qgy+ePOKTX8DMCBgLDoWOcYadz6DE8MTIkktkvKxgdGFoSmlNFGHgiIJBknqwOM7wmzEE3OXlhMdlYfiR+9RAiGwELPRCZjw0ymXypW9q3zWJOwDrDcWjvc5SUwO8q2jyvs5tHMskwE5LOVtB5LeyX4bjZcG34o+gRrgd9vf5eH8aTzcZSHLMKtI3hwEedn+nH3T8iiD9tHPDvmMDnzIIkk+VnI170uOv9xLm2o5/XA3D66BD0HSTzFP1zzqNKfNHPZy7H71w8FPGw9F0k/DC2APn6c87+8Pefw/8D3ENzlWMXj9wAAAAASUVORK5CYII=',
+				threshold: 0,
+				visibleOnly: true,
+				afterLoad: function(element) {
+			  		console.log('image was loaded successfully');
+		  		},
+				onError: function(element) {
+					console.log('error loading ' + element.data('src'));
+				}
+			});
+		});
+	</script>
 </body>
