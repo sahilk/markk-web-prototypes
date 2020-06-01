@@ -26,7 +26,11 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
-	<link href="style-2020-05-28-2.css" rel="stylesheet">
+	<!-- Add to home screen for Android -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="icon" type="image/png" sizes="192x192"  href="img/icon-192x192.png">
+
+	<link href="style-2020-06-01-1.css" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
 
 	<link href="img/favicon.png" rel="shortcut icon">
@@ -36,10 +40,23 @@
 <body>
 	<div id="app">
 		<div id="home">
-			<ul class="home-nav">
+			<!-- <ul class="home-nav">
 				<li class="btn btn-regular btn-icon-text"><a href="#"><i class="material-icons-round color-yellow-100">monetization_on</i><span>Get Points</span></a></li>
 				<li class="btn btn-regular btn-icon"><a href="#"><i class="material-icons-round color-white-100">chat</i></a></li>
-			</ul> <!-- .home-nav -->
+			</ul> --> <!-- .home-nav -->
+
+			<div class="home-intro">
+				<img src="img/logo.svg">
+				<p>A real-time visual feed of what’s happening around you.</p>
+			</div> <!-- .home-intro -->
+
+			<ul class="home-summaries">
+				<li class="home-summary"><a href="#"><img class="lazy" data-src="https://source.unsplash.com/O453M2Liufs/64x64/"><span class="summary-text">Best of Markk</span></a></li>
+				<li class="home-summary"><a href="#"><img class="lazy" data-src="https://source.unsplash.com/_wkd7XBRfU4/64x64/"><span class="summary-text">Cafes</span></a></li>
+				<li class="home-summary"><a href="#"><img class="lazy" data-src="https://source.unsplash.com/ROJFuWCsfmA/64x64/"><span class="summary-text">@steph92</span></a></li>
+				<li class="home-summary"><a href="#"><img class="lazy" data-src="https://source.unsplash.com/iwWJFIlnDm4/64x64/"><span class="summary-text">Bars</span></a></li>
+				<li class="home-summary inactive"><a href="#"><img class="lazy" data-src="https://source.unsplash.com/CLK_UNY6WBE/64x64/"><span class="summary-text">Los Angeles</span></a></li>
+			</ul> <!-- .home-summaries -->
 
 			<div class="home-feed">
 				<ul class="feed-tabs">
@@ -49,123 +66,200 @@
 
 				<div class="feed-cards">
 					<ul class="feed-nearby">
-						<li class="feed-card feed-card-onboarding animate__animated animate__pulse animate__repeat-3 animate__delay-1s animate__fast">
-							<span class="feed-card-aspect-ratio">
+						<li class="feed-card-full feed-card-place">
+							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/D_Rfjj3XV8M/750x750/">
 								<span class="feed-card-content">
-									<span class="feed-card-text">
-										<span class="feed-card-title">Introducing Emergency Supply Finder</span>
-										<span class="feed-card-meta">Start Here &rarr;</span>
+									<span class="feed-card-progress">
+										<span class="progress-bar" data-progress="50"></span>
+										<span class="progress-bar"></span>
+										<span class="progress-bar"></span>
 									</span>
-								</span>
-							</span>
-						</li> <!-- .feed-card .feed-card-onboarding -->
+									<span class="feed-card-upper">
+										<img class="feed-card-rating" src="img/rating-dope.png">
+										<span class="feed-card-place-details">
+											<span class="feed-card-title">Independence Brewing Co</span>
+											<span class="feed-card-meta">Microbrewery • 2 mi</span>
+										</span>
+									</span> <!-- .feed-card-upper -->
 
-						<li class="feed-card feed-card-place">
-							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/random/500x500/?bar">
-								<span class="feed-card-content">
-									<img src="img/rating-label-dope.png">
-									<span class="feed-card-text">
-										<span class="feed-card-title">Independence Brewing Co</span>
-										<span class="feed-card-meta">Microbrewery • 2 mi</span>
-									</span>
+									<span class="feed-card-lower">
+										<ul class="going-timestamp">
+											<li class="going">24 Going</li>
+											<li class="timestamp">Rating by @sahilk • 5 mins</li>
+										</ul>
+										<span class="comments-qna">
+											<ul class="card-tabs">
+												<li class="card-tab active"><a href="#">All</a></li>
+												<li class="card-tab"><a href="#">3 Asks</a></li>
+												<li class="card-tab"><a href="#">5 Comments</a></li>
+											</ul>
+											<ul class="comments-qna-list">
+												<li class="comment-qna">
+													<img class="lazy" data-src="https://source.unsplash.com/hh3ViD0r0Rc/32x32/">
+													<span class="comment">
+														<span class="comment-text">Can you check if they have the tacos today?</span>
+														<ul class="comment-meta">
+															<li>@luis_v</li>
+															<li>5 mins</li>
+															<li>Delete</li>
+														</ul>
+													</span>
+												</li>
+											</ul> <!-- .comments-qna-list -->
+										</span>
+									</span> <!-- .feed-card-lower -->
 								</span>
 							</span>
-						</li> <!-- .feed-card .feed-card-place -->
+						</li> <!-- .feed-card-full .feed-card-place -->
+						<li class="feed-card-full feed-card-place">
+							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/DmO35dvwC0I/750x750/">
+								<span class="feed-card-content">
+									<span class="feed-card-progress">
+										<span class="progress-bar" data-progress="50"></span>
+										<span class="progress-bar"></span>
+										<span class="progress-bar"></span>
+									</span>
+									<span class="feed-card-upper">
+										<img class="feed-card-rating" src="img/rating-nope.png">
+										<span class="feed-card-place-details">
+											<span class="feed-card-title">Malaka Spice</span>
+											<span class="feed-card-meta">Restaurant • 2 mi</span>
+										</span>
+									</span> <!-- .feed-card-upper -->
 
-						<li class="feed-card feed-card-place">
-							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/random/500x500/?restaurant">
-								<span class="feed-card-content">
-									<img src="img/rating-label-dope.png">
-									<span class="feed-card-text">
-										<span class="feed-card-title">Malaka Spice</span>
-										<span class="feed-card-meta">Restaurant • 2 mi</span>
-									</span>
+									<span class="feed-card-lower">
+										<ul class="going-timestamp">
+											<li class="going">24 Going</li>
+											<li class="timestamp">Rating by @sahilk • 5 mins</li>
+										</ul>
+										<span class="comments-qna">
+											<ul class="card-tabs">
+												<li class="card-tab active"><a href="#">All</a></li>
+												<li class="card-tab"><a href="#">3 Asks</a></li>
+												<li class="card-tab"><a href="#">5 Comments</a></li>
+											</ul>
+											<ul class="comments-qna-list">
+												<li class="comment-qna">
+													<img class="lazy" data-src="https://source.unsplash.com/hh3ViD0r0Rc/32x32/">
+													<span class="comment">
+														<span class="comment-text">Can you check if they have the tacos today?</span>
+														<ul class="comment-meta">
+															<li>@luis_v</li>
+															<li>5 mins</li>
+															<li>Delete</li>
+														</ul>
+													</span>
+												</li>
+											</ul> <!-- .comments-qna-list -->
+										</span>
+									</span> <!-- .feed-card-lower -->
 								</span>
 							</span>
-						</li> <!-- .feed-card .feed-card-place -->
+						</li> <!-- .feed-card-full .feed-card-place -->
+						<li class="feed-card-full feed-card-place">
+							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/tKN1WXrzQ3s/750x750/">
+								<span class="feed-card-content">
+									<span class="feed-card-progress">
+										<span class="progress-bar" data-progress="50"></span>
+										<span class="progress-bar"></span>
+										<span class="progress-bar"></span>
+									</span>
+									<span class="feed-card-upper">
+										<img class="feed-card-rating" src="img/rating-okay.png">
+										<span class="feed-card-place-details">
+											<span class="feed-card-title">Third Wave Coffee</span>
+											<span class="feed-card-meta">Cafe • 2 mi</span>
+										</span>
+									</span> <!-- .feed-card-upper -->
 
-						<li class="feed-card feed-card-place">
-							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/random/500x500/?cafe">
-								<span class="feed-card-content">
-									<img src="img/rating-label-okay.png">
-									<span class="feed-card-text">
-										<span class="feed-card-title">Third Wave Coffee</span>
-										<span class="feed-card-meta">Cafe • 2 mi</span>
-									</span>
+									<span class="feed-card-lower">
+										<ul class="going-timestamp">
+											<li class="going">24 Going</li>
+											<li class="timestamp">Rating by @sahilk • 5 mins</li>
+										</ul>
+										<span class="comments-qna">
+											<ul class="card-tabs">
+												<li class="card-tab active"><a href="#">All</a></li>
+												<li class="card-tab"><a href="#">3 Asks</a></li>
+												<li class="card-tab"><a href="#">5 Comments</a></li>
+											</ul>
+											<ul class="comments-qna-list">
+												<li class="comment-qna">
+													<img class="lazy" data-src="https://source.unsplash.com/hh3ViD0r0Rc/32x32/">
+													<span class="comment">
+														<span class="comment-text">Can you check if they have the tacos today?</span>
+														<ul class="comment-meta">
+															<li>@luis_v</li>
+															<li>5 mins</li>
+															<li>Delete</li>
+														</ul>
+													</span>
+												</li>
+											</ul> <!-- .comments-qna-list -->
+										</span>
+									</span> <!-- .feed-card-lower -->
 								</span>
 							</span>
-						</li> <!-- .feed-card .feed-card-place -->
+						</li> <!-- .feed-card-full .feed-card-place -->
+						<li class="feed-card-full feed-card-place">
+							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/nC6CyrVBtkU/750x750/">
+								<span class="feed-card-content">
+									<span class="feed-card-progress">
+										<span class="progress-bar" data-progress="50"></span>
+										<span class="progress-bar"></span>
+										<span class="progress-bar"></span>
+									</span>
+									<span class="feed-card-upper">
+										<img class="feed-card-rating" src="img/rating-okay.png">
+										<span class="feed-card-place-details">
+											<span class="feed-card-title">91Springboard DTLA</span>
+											<span class="feed-card-meta">Coworking Space • 2 mi</span>
+										</span>
+									</span> <!-- .feed-card-upper -->
 
-						<li class="feed-card feed-card-place">
-							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/random/500x500/?office">
-								<span class="feed-card-content">
-									<img src="img/rating-label-nope.png">
-									<span class="feed-card-text">
-										<span class="feed-card-title">91Springboard Yerwada</span>
-										<span class="feed-card-meta">Coworking Space • 2 mi</span>
-									</span>
+									<span class="feed-card-lower">
+										<ul class="going-timestamp">
+											<li class="going">24 Going</li>
+											<li class="timestamp">Rating by @sahilk • 5 mins</li>
+										</ul>
+										<span class="comments-qna">
+											<ul class="card-tabs">
+												<li class="card-tab active"><a href="#">All</a></li>
+												<li class="card-tab"><a href="#">3 Asks</a></li>
+												<li class="card-tab"><a href="#">5 Comments</a></li>
+											</ul>
+											<ul class="comments-qna-list">
+												<li class="comment-qna">
+													<img class="lazy" data-src="https://source.unsplash.com/hh3ViD0r0Rc/32x32/">
+													<span class="comment">
+														<span class="comment-text">Can you check if they have the tacos today?</span>
+														<ul class="comment-meta">
+															<li>@luis_v</li>
+															<li>5 mins</li>
+															<li>Delete</li>
+														</ul>
+													</span>
+												</li>
+											</ul> <!-- .comments-qna-list -->
+										</span>
+									</span> <!-- .feed-card-lower -->
 								</span>
 							</span>
-						</li> <!-- .feed-card .feed-card-place -->
-
-						<li class="feed-card feed-card-place">
-							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/random/500x500/?park">
-								<span class="feed-card-content">
-									<img src="img/rating-label-okay.png">
-									<span class="feed-card-text">
-										<span class="feed-card-title">Empress Garden</span>
-										<span class="feed-card-meta">Park • 2 mi</span>
-									</span>
-								</span>
-							</span>
-						</li> <!-- .feed-card .feed-card-place -->
-
-						<li class="feed-card feed-card-place">
-							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/random/500x500/?art">
-								<span class="feed-card-content">
-									<img src="img/rating-label-dope.png">
-									<span class="feed-card-text">
-										<span class="feed-card-title">Tilting Art Gallery</span>
-										<span class="feed-card-meta">Art Gallery • 2 mi</span>
-									</span>
-								</span>
-							</span>
-						</li> <!-- .feed-card .feed-card-place -->
-
-						<li class="feed-card feed-card-place">
-							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/random/500x500/?shopping">
-								<span class="feed-card-content">
-									<img src="img/rating-label-dope.png">
-									<span class="feed-card-text">
-										<span class="feed-card-title">Phoenix Marketcity</span>
-										<span class="feed-card-meta">Shopping Mall • 2 mi</span>
-									</span>
-								</span>
-							</span>
-						</li> <!-- .feed-card .feed-card-place -->
-
-						<li class="feed-card feed-card-add-rating">
-							<span class="feed-card-aspect-ratio">
-								<span class="feed-card-content">
-									<i class="material-icons-round">add</i>
-									<span class="feed-card-text">
-										<span class="feed-card-title">Add a new rating</span>
-									</span>
-								</span>
-							</span>
-						</li> <!-- .feed-card .feed-card-add-rating -->
+						</li> <!-- .feed-card-full .feed-card-place -->
 					</ul>
 				</div> <!-- .feed-cards -->
 			</div> <!-- .home-feed -->
 		</div> <!-- #home -->
 
-		<ul id="bottom-nav">
-			<li class="btn btn-borderless"><a href="#"><i class="material-icons-round color-white-100">home</i></a></li>
-			<li class="btn btn-borderless"><a href="#"><i class="material-icons-round color-white-50">search</i></a></li>
-			<li class="btn add-rating"><a href="#"><i class="material-icons-round color-blackDark-100">add</i></a></li>
-			<li class="btn btn-borderless"><a href="#"><i class="material-icons-round color-white-50">notifications</i></a></li>
-			<li class="btn btn-borderless"><a href="#"><i class="material-icons-round color-white-50">person</i></a></li>
-		</ul> <!-- #bottom-nav -->
+		<div id="bottom-nav">
+			<ul>
+				<li class="btn btn-borderless"><a href="#"><i class="material-icons-round color-blackDark-100">home</i></a></li>
+				<li class="btn btn-borderless"><a href="#"><i class="material-icons-round color-blackDark-50">search</i></a></li>
+				<li class="btn add-rating"><a href="#"><i class="material-icons-round color-blackDark-100">add</i></a></li>
+				<li class="btn btn-borderless"><a href="#"><i class="material-icons-round color-blackDark-50">notifications</i></a></li>
+				<li class="btn btn-borderless"><a href="#"><i class="material-icons-round color-blackDark-50">person</i></a></li>
+			</ul>
+		<div> <!-- #bottom-nav -->
 	</div> <!-- #app -->
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -182,7 +276,6 @@
 
 		$(function() {
 			$('.lazy').Lazy({
-				delay: 1200,
 				effect: 'fadeIn',
 				effectTime: 1200,
 				placeholder: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAADtklEQVRIx22WUZbrOA5DLxj32mcjvYLZ3sS480E5qXrdKh2XrMggCZKw85+//xuYMOEKV/hruMa/wjVc8RpeceJgABTUyi23ee/sszBv55aakgEA+Q6/dx5Az56fnV/Df9l5xrXHc57H7L/z94Hfvexa/PXDCUzR7NGPL5cSMI9RPQ+j1eHgqNlHOTYWDm10jgvnyfiEcf3CfaK1Gg2qqVnP5JODL3OL3sfGMcGJMpcPfWJlsfpcGwebJvaJc52okWiqZSp1eoLz48u1N7O2Q13fW76L7JU+BhAKJXXKfLMCOqJk47nqyWtxVGwsle4iNJQ0JwIfAylTKlNe1T77qlRGuKxAMVAsLRXLvetj4CzklEl65qux0GdTKpQTx4ciN4JSbWm5a8sd7kX400BSprG8lruCyVoSi8KhqBqsHVpb7zO54w23dg7tAIYyd6ZZJm0W/TYplZhKLtsTgcbf6H3XO77hxvuhQaCJGfNqFpomTczBNdXNgT5tWFvd623ferfv+I7vro3ttWCm6/7Y0MRZkzU10WxTXz7toS56ez/zPX3X/8X3LF2ULaaMmY4WJ040zjw2IiGwFGV757h/Pzzd9kRg3y5RW4SJmc5LcU6/OK8VUFOWK2O4PvLBzwo6Zm77PvNPA3kEK8zAC254mW3qYTXGXNhHC9XyEEVvez/G7p8GSB6dDxkcvPFly9RuhwSAuY7g6hbbabXv+qbFG7sGwtFfDN7x9Tkctqa27QKBXtg8sp8lajv6c31mbFI0x7uGjzAaS/YRf8hVrnCE+WnXc/u8IyTPgZh9MUUCOTvJ0cGTnZUWH4piAwdicXPQN5eBzGImJNEk+4IOhsGG4Kw4KjRJDPTK96Rx3+xOTiKz7poxIZMQkpA0mXOaiR63/UCRQq7x8RcnT5gxQ8pMxgyJmSRMThUlX21YqThfHk3DQONS9EF/aBnIMGUmh2oyzMCKwkZnhgxk22qgy+ePOKTX8DMCBgLDoWOcYadz6DE8MTIkktkvKxgdGFoSmlNFGHgiIJBknqwOM7wmzEE3OXlhMdlYfiR+9RAiGwELPRCZjw0ymXypW9q3zWJOwDrDcWjvc5SUwO8q2jyvs5tHMskwE5LOVtB5LeyX4bjZcG34o+gRrgd9vf5eH8aTzcZSHLMKtI3hwEedn+nH3T8iiD9tHPDvmMDnzIIkk+VnI170uOv9xLm2o5/XA3D66BD0HSTzFP1zzqNKfNHPZy7H71w8FPGw9F0k/DC2APn6c87+8Pefw/8D3ENzlWMXj9wAAAAASUVORK5CYII=',
