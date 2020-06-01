@@ -407,7 +407,7 @@ i {
 									background: $white-75;
 									display: flex;
 									flex-direction: column;
-									height: 144px;
+									height: 72px;
 									overflow-y: hidden;
 									margin: 0 8px;
 
@@ -440,11 +440,12 @@ i {
 
 									.comments-qna-list {
 										display: flex;
-										flex-wrap: wrap;
+										flex-direction: column;
 										padding: 16px;
 
 										.comment-qna {
 											display: flex;
+											flex: 1;
 											flex-direction: row;
 
 											img {
