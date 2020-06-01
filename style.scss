@@ -459,6 +459,8 @@ i {
 											.comment {
 												display: flex;
 												flex-direction: column;
+												height: auto;
+												width: calc(100% - 32px - 8px);
 
 												.comment-text {
 													display: block;
