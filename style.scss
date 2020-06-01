@@ -440,7 +440,7 @@ i {
 
 									.comments-qna-list {
 										display: flex;
-										flex-direction: column;
+										flex-wrap: wrap;
 										padding: 16px;
 
 										.comment-qna {
