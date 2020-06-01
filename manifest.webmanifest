@@ -9,9 +9,9 @@
       "sizes": "192x192"
     }
   ],
-  "start_url": "/?source=pwa",
+  "start_url": "/markk-web-prototypes?source=pwa",
   "background_color": "#000",
   "display": "standalone",
-  "scope": "/",
+  "scope": "/markk-web-prototypes/",
   "theme_color": "#000"
 }
