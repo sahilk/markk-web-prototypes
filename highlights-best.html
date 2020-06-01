@@ -13,7 +13,7 @@
 
 	<meta name="robots" conent="none" />
 	
-	<title>Markk Prototype</title>
+	<title>Best of Markk — Markk Prototype</title>
 	<meta name="description" content="Get real-time live ratings of places around you. Download now on iOS & Android.">
 
 	<!-- Chrome, Firefox OS and Opera - For Address Bar Color -->
@@ -40,79 +40,18 @@
 <body>
 	<div id="app">
 		<div id="home">
-			<!-- <ul class="home-nav">
-				<li class="btn btn-regular btn-icon-text"><a href="#"><i class="material-icons-round color-yellow-100">monetization_on</i><span>Get Points</span></a></li>
-				<li class="btn btn-regular btn-icon"><a href="#"><i class="material-icons-round color-white-100">chat</i></a></li>
-			</ul> --> <!-- .home-nav -->
-
-			<div class="home-intro">
-				<img src="img/logo.svg">
-				<p>A real-time visual feed of what’s happening around you.</p>
-			</div> <!-- .home-intro -->
-
-			<ul class="home-summaries">
-				<li class="home-summary"><a href="highlights-best.html"><img class="lazy" data-src="https://source.unsplash.com/O453M2Liufs/64x64/"><span class="summary-text">Best of Markk</span></a></li>
-				<li class="home-summary"><a href="#"><img class="lazy" data-src="https://source.unsplash.com/_wkd7XBRfU4/64x64/"><span class="summary-text">Cafes</span></a></li>
-				<li class="home-summary"><a href="#"><img class="lazy" data-src="https://source.unsplash.com/ROJFuWCsfmA/64x64/"><span class="summary-text">@steph92</span></a></li>
-				<li class="home-summary"><a href="#"><img class="lazy" data-src="https://source.unsplash.com/iwWJFIlnDm4/64x64/"><span class="summary-text">Bars</span></a></li>
-				<li class="home-summary inactive"><a href="#"><img class="lazy" data-src="https://source.unsplash.com/CLK_UNY6WBE/64x64/"><span class="summary-text">Los Angeles</span></a></li>
-			</ul> <!-- .home-summaries -->
+			<div class="back-nav">
+				<a href="index.html"><i class="material-icons-round color-white-100">arrow_back</i></a>
+			</div>
 
 			<div class="home-feed">
-				<ul class="feed-tabs">
-					<li class="feed-tab active"><a href="#">Nearby</a></li>
-					<li class="feed-tab inactive"><a href="#">Everywhere</a></li>
-				</ul> <!-- .home-feed -->
+				<span class="page-title">Best of Markk</span>
+				<span class="page-para">We’ve hand-picked some of the best ratings from the past week that’ve been added you all.</span>
 
 				<div class="feed-cards">
 					<ul class="feed-nearby">
-						<li class="feed-card-full feed-card-place">
-							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/D_Rfjj3XV8M/750x750/">
-								<span class="feed-card-content">
-									<span class="feed-card-progress">
-										<span class="progress-bar" data-progress="50"></span>
-										<span class="progress-bar"></span>
-										<span class="progress-bar"></span>
-									</span>
-									<span class="feed-card-upper">
-										<img class="feed-card-rating" src="img/rating-dope.png">
-										<span class="feed-card-place-details">
-											<span class="feed-card-title">Independence Brewing Co</span>
-											<span class="feed-card-meta">Microbrewery • 2 mi</span>
-										</span>
-									</span> <!-- .feed-card-upper -->
-
-									<span class="feed-card-lower">
-										<ul class="going-timestamp">
-											<li class="going">24 Going</li>
-											<li class="timestamp">Rating by @sahilk • 5 mins</li>
-										</ul>
-										<span class="comments-qna">
-											<ul class="card-tabs">
-												<li class="card-tab active"><a href="#">All</a></li>
-												<li class="card-tab"><a href="#">3 Asks</a></li>
-												<li class="card-tab"><a href="#">5 Comments</a></li>
-											</ul>
-											<ul class="comments-qna-list">
-												<li class="comment-qna">
-													<img class="lazy" data-src="https://source.unsplash.com/hh3ViD0r0Rc/32x32/">
-													<span class="comment-details">
-														<span class="comment-text">Can you check if they have the tacos today?</span>
-														<ul class="comment-meta">
-															<li>@luis_v</li>
-															<li>5 mins</li>
-															<li>Delete</li>
-														</ul>
-													</span>
-												</li>
-											</ul> <!-- .comments-qna-list -->
-										</span>
-									</span> <!-- .feed-card-lower -->
-								</span>
-							</span>
-						</li> <!-- .feed-card-full .feed-card-place -->
-						<li class="feed-card-full feed-card-place">
-							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/DmO35dvwC0I/750x750/">
+						<li id="best-1" class="feed-card-full feed-card-place">
+							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/Mlj_wDdtEks/750x750/">
 								<span class="feed-card-content">
 									<span class="feed-card-progress">
 										<span class="progress-bar" data-progress="50"></span>
@@ -122,8 +61,8 @@
 									<span class="feed-card-upper">
 										<img class="feed-card-rating" src="img/rating-nope.png">
 										<span class="feed-card-place-details">
-											<span class="feed-card-title">Malaka Spice</span>
-											<span class="feed-card-meta">Restaurant • 2 mi</span>
+											<span class="feed-card-title">Kempegowda International Airport Bengaluru</span>
+											<span class="feed-card-meta">Bengaluru, India</span>
 										</span>
 									</span> <!-- .feed-card-upper -->
 
@@ -156,62 +95,8 @@
 								</span>
 							</span>
 						</li> <!-- .feed-card-full .feed-card-place -->
-						<li class="feed-breaker">
-							<span class="title">Best of Markk</span>
-							<span class="para">We’ve hand-picked some of the best ratings from the past week that’ve been added you all.</span>
-							<ul class="feed-breaker-cards">
-								<li class="feed-card-half feed-card-place">
-									<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/Mlj_wDdtEks/500x500/">
-										<a href="highlights-best.html#best-1">link</a>
-										<span class="feed-card-content">
-											<img src="img/rating-nope.png">
-											<span class="feed-card-text">
-												<span class="feed-card-title">Kempegowda International Airport Bengaluru</span>
-												<span class="feed-card-meta">Bengaluru, India</span>
-											</span>
-										</span>
-									</span>
-								</li> <!-- .feed-card-half -->
-								<li class="feed-card-half feed-card-place">
-									<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/xxVtovqDa7M/500x500/">
-										<a href="highlights-best.html#best-2">link</a>
-										<span class="feed-card-content">
-											<img src="img/rating-dope.png">
-											<span class="feed-card-text">
-												<span class="feed-card-title">Mel Coffee Roasters</span>
-												<span class="feed-card-meta">Osaka, Japan</span>
-											</span>
-										</span>
-									</span>
-								</li> <!-- .feed-card-half -->
-								<li class="feed-card-half feed-card-place">
-									<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/HyU6sLdg2xk/500x500/">
-										<a href="highlights-best.html#best-3">link</a>
-										<span class="feed-card-content">
-											<img src="img/rating-dope.png">
-											<span class="feed-card-text">
-												<span class="feed-card-title">Hot Air Balloon Cappadocia</span>
-												<span class="feed-card-meta">Göreme, Turkey</span>
-											</span>
-										</span>
-									</span>
-								</li> <!-- .feed-card-half -->
-								<li class="feed-card-half feed-card-place">
-									<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/LO7rNP0LRro/500x500/">
-										<a href="highlights-best.html#best-4">link</a>
-										<span class="feed-card-content">
-											<img src="img/rating-okay.png">
-											<span class="feed-card-text">
-												<span class="feed-card-title">Momofuku</span>
-												<span class="feed-card-meta">New York City, USA</span>
-											</span>
-										</span>
-									</span>
-								</li> <!-- .feed-card-half -->
-							</ul>
-						</li> <!-- .feed-breaker -->
-						<li class="feed-card-full feed-card-place">
-							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/tKN1WXrzQ3s/750x750/">
+						<li id="best-2" class="feed-card-full feed-card-place">
+							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/xxVtovqDa7M/750x750/">
 								<span class="feed-card-content">
 									<span class="feed-card-progress">
 										<span class="progress-bar" data-progress="50"></span>
@@ -219,10 +104,10 @@
 										<span class="progress-bar"></span>
 									</span>
 									<span class="feed-card-upper">
-										<img class="feed-card-rating" src="img/rating-okay.png">
+										<img class="feed-card-rating" src="img/rating-nope.png">
 										<span class="feed-card-place-details">
-											<span class="feed-card-title">Third Wave Coffee</span>
-											<span class="feed-card-meta">Cafe • 2 mi</span>
+											<span class="feed-card-title">Mel Coffee Roasters</span>
+											<span class="feed-card-meta">Osaka, Japan</span>
 										</span>
 									</span> <!-- .feed-card-upper -->
 
@@ -255,8 +140,8 @@
 								</span>
 							</span>
 						</li> <!-- .feed-card-full .feed-card-place -->
-						<li class="feed-card-full feed-card-place">
-							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/nC6CyrVBtkU/750x750/">
+						<li id="best-3" class="feed-card-full feed-card-place">
+							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/HyU6sLdg2xk/750x750/">
 								<span class="feed-card-content">
 									<span class="feed-card-progress">
 										<span class="progress-bar" data-progress="50"></span>
@@ -264,10 +149,55 @@
 										<span class="progress-bar"></span>
 									</span>
 									<span class="feed-card-upper">
-										<img class="feed-card-rating" src="img/rating-okay.png">
+										<img class="feed-card-rating" src="img/rating-nope.png">
 										<span class="feed-card-place-details">
-											<span class="feed-card-title">91Springboard DTLA</span>
-											<span class="feed-card-meta">Coworking Space • 2 mi</span>
+											<span class="feed-card-title">Hot Air Balloon Cappadocia</span>
+											<span class="feed-card-meta">Göreme, Turkey</span>
+										</span>
+									</span> <!-- .feed-card-upper -->
+
+									<span class="feed-card-lower">
+										<ul class="going-timestamp">
+											<li class="going">24 Going</li>
+											<li class="timestamp">Rating by @sahilk • 5 mins</li>
+										</ul>
+										<span class="comments-qna">
+											<ul class="card-tabs">
+												<li class="card-tab active"><a href="#">All</a></li>
+												<li class="card-tab"><a href="#">3 Asks</a></li>
+												<li class="card-tab"><a href="#">5 Comments</a></li>
+											</ul>
+											<ul class="comments-qna-list">
+												<li class="comment-qna">
+													<img class="lazy" data-src="https://source.unsplash.com/hh3ViD0r0Rc/32x32/">
+													<span class="comment-details">
+														<span class="comment-text">Can you check if they have the tacos today?</span>
+														<ul class="comment-meta">
+															<li>@luis_v</li>
+															<li>5 mins</li>
+															<li>Delete</li>
+														</ul>
+													</span>
+												</li>
+											</ul> <!-- .comments-qna-list -->
+										</span>
+									</span> <!-- .feed-card-lower -->
+								</span>
+							</span>
+						</li> <!-- .feed-card-full .feed-card-place -->
+						<li id="best-4" class="feed-card-full feed-card-place">
+							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/LO7rNP0LRro/750x750/">
+								<span class="feed-card-content">
+									<span class="feed-card-progress">
+										<span class="progress-bar" data-progress="50"></span>
+										<span class="progress-bar"></span>
+										<span class="progress-bar"></span>
+									</span>
+									<span class="feed-card-upper">
+										<img class="feed-card-rating" src="img/rating-nope.png">
+										<span class="feed-card-place-details">
+											<span class="feed-card-title">Momofuku</span>
+											<span class="feed-card-meta">New York City, USA</span>
 										</span>
 									</span> <!-- .feed-card-upper -->
 
@@ -303,17 +233,7 @@
 					</ul>
 				</div> <!-- .feed-cards -->
 			</div> <!-- .home-feed -->
-		</div> <!-- #home -->
-
-		<div id="bottom-nav">
-			<ul>
-				<li class="btn btn-borderless"><a href="#"><i class="material-icons-round color-blackDark-100">home</i></a></li>
-				<li class="btn btn-borderless"><a href="#"><i class="material-icons-round color-blackDark-50">search</i></a></li>
-				<li class="btn add-rating"><a href="#"><i class="material-icons-round color-blackDark-100">add</i></a></li>
-				<li class="btn btn-borderless"><a href="#"><i class="material-icons-round color-blackDark-50">notifications</i></a></li>
-				<li class="btn btn-borderless"><a href="#"><i class="material-icons-round color-blackDark-50">person</i></a></li>
-			</ul>
-		<div> <!-- #bottom-nav -->
+		</div>
 	</div> <!-- #app -->
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -342,13 +262,6 @@
 					console.log('error loading ' + element.data('src'));
 				}
 			});
-		});
-
-		$(document).delegate(".home-summary", "click", function() {
-			window.location = $(this).find("a").attr("href");
-		});
-		$(document).delegate(".feed-card-half", "click", function() {
-			window.location = $(this).find("a").attr("href");
 		});
 	</script>
 </body>
