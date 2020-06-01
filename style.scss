@@ -406,7 +406,7 @@ i {
 									background: $white-75;
 									display: flex;
 									flex-direction: column;
-									height: 72px;
+									height: 144px;
 									overflow-y: hidden;
 									margin: 0 8px;
 
@@ -414,6 +414,7 @@ i {
 										backdrop-filter: blur(4px);
 										background: $white-50;
 										display: flex;
+										flex: none;
 										flex-direction: row;
 
 										.card-tab {
@@ -422,7 +423,6 @@ i {
 											@extend .font-12;
 											@extend .uppercase;
 
-											display: block;
 											padding: 12px 16px 10px;
 
 											&:first-child {
@@ -447,6 +447,7 @@ i {
 
 											img {
 												@include border-radius(50%);
+												background: $blackDark-50;
 												border: 1px solid $white-50;
 												height: 32px;
 												margin: 0 8px 0 0;
