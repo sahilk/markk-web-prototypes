@@ -445,7 +445,6 @@ i {
 
 										.comment-qna {
 											display: flex;
-											flex: 1;
 											flex-direction: row;
 
 											img {
@@ -457,7 +456,7 @@ i {
 												width: 32px;
 											}
 
-											.comment {
+											.comment-details {
 												display: flex;
 												flex-direction: column;
 												height: auto;
