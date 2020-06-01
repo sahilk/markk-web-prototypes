@@ -9,9 +9,9 @@
       "sizes": "192x192"
     }
   ],
-  "start_url": "https://threenovember.com/markk-web-prototypes/",
+  "start_url": "./?source=pwa",
   "background_color": "#000",
   "display": "standalone",
-  "scope": "/",
+  "scope": ".",
   "theme_color": "#000"
 }
