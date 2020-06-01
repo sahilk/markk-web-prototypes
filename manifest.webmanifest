@@ -9,9 +9,9 @@
       "sizes": "192x192"
     }
   ],
-  "start_url": "/markk-web-prototypes?source=pwa",
+  "start_url": "https://threenovember.com/markk-web-prototypes/",
   "background_color": "#000",
   "display": "standalone",
-  "scope": "/markk-web-prototypes/",
+  "scope": "/",
   "theme_color": "#000"
 }
