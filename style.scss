@@ -68,6 +68,7 @@ i {
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent;
+    display: none;
 }
 
 // utilities
@@ -164,17 +165,17 @@ i {
 #home {
 	display: flex;
 	flex-direction: column;
-
-	padding: 20px 0 88px;
+	padding: 20px 0 80px;
 
 	.home-nav {
+		align-items: flex-start;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		align-items: flex-start;
-
 		margin-bottom: 32px;
 		padding: 0 16px;
+
+		scroll-snap-align: start;
 
 		.btn {
 			@extend .capitalize;
@@ -229,7 +230,7 @@ i {
 			img {
 				@include border-radius(32px);
 
-				background: $blackLight-100;
+				background-color: $blackLight-100;
 				border: 2px solid $white-100;
 				display: block;
 				height: 64px;
@@ -277,327 +278,141 @@ i {
 				}
 			}
 		}
+	}
+}
 
-		.feed-cards {
-			.feed-nearby, .feed-everywhere {
-				display: flex;
-				flex-direction: row;
-				flex-wrap: wrap;
+.back-nav {
+	background: $blackDark-100;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 100;
 
-				.feed-card-full {
-					@extend .color-white-100;
+	a {
+		display: block;
+		height: 48px;
+		padding: 12px;
+		width: 48px;
+	}
+}
+
+.feed-cards {
+	.feed-nearby, .feed-everywhere {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+
+		.feed-card-full {
+			@extend .color-white-100;
+
+			background: $blackLight-100;
+			margin-bottom: 24px;
+			width: 100%;
+
+			.feed-card-aspect-ratio {
+				@include border-radius(8px);
+				background-color: $blackLight-100;
+				background-size: cover;
+				display: block;
+				padding-top: calc(4.33 / 3 * 100%);
+				position: relative;
+				width: 100%;
+
+				.feed-card-content {
 					@include border-radius(8px);
+					bottom: 0;
+					left: 0;
+					position: absolute;
+					right: 0;
+					top: 0;
 
-					background: $blackLight-100;
-					border: 1px solid $white-10;
-					margin-bottom: 24px;
-					width: 100%;
+					overflow: hidden;
 
-					.feed-card-aspect-ratio {
-						@include border-radius(8px);
-						background-size: cover;
-						display: block;
-						padding-top: calc(4.33 / 3 * 100%);
+					.slider {
+						display: flex;
+						flex-direction: column;
+						flex-wrap: wrap;
+						height: 100%;
+						overflow: scroll;
 						position: relative;
+						scroll-snap-type: x mandatory;
+						width: 100%;
 
-						.feed-card-content {
-							background: $blackDark-50;
+						.card-img {
 							@include border-radius(8px);
-							bottom: 0;
-							left: 0;
-							position: absolute;
-							right: 0;
-							top: 0;
+							background-size: cover;
+							display: block;
+							height: 100%;
+							scroll-snap-align: start;
+							width: 100%;
 
-							.feed-card-progress {
-								display: flex;
-								flex-direction: row;
-								justify-content: space-between;
-								padding: 8px;
-
-								.progress-bar {
-									@include border-radius(2px);
-
-									background: $white-50;
-									flex-grow: 1;
-									height: 4px;
-									margin: 0 4px 0 0;
-
-									&:last-child {
-										margin: 0;
-									}
-
-									&[data-progress]:after {
-										@include border-radius(2px);
-										background: $white-100;
-										content: "";
-										display: block;
-										height: 100%;
-										width: 50%;
-									}
-								}
-							}
-
-							.feed-card-upper {
-								align-items: center;
-								display: flex;
-								flex-direction: row;
-								justify-content: flex-start;
-								padding: 4px 24px;
-
-								.feed-card-rating {
-									height: auto;
-									margin: 0 16px 0 0;
-									width: 64px;
-								}
-
-								.feed-card-place-details {
-									text-shadow: 0 1px $blackDark-50;
-									width: calc(100% - 64px - 16px);
-
-									.feed-card-title {
-										@extend .font-20;
-										@extend .bold;
-
-										display: block;
-										line-height: 24px;
-										margin-bottom: 4px;
-										overflow: hidden;
-										text-overflow: ellipsis;
-										white-space: nowrap;
-									}
-
-									.feed-card-meta {
-										display: block;
-										@extend .font-14;
-									}
-								}
-							}
-
-							.feed-card-lower {
-								bottom: 0;
-								display: flex;
-								flex-direction: column;
-								position: absolute;
+							&:after {
+								@include border-radius(8px);
+								border: 1px solid $white-10;
+								content: "";
+								display: block;
+								height: 100%;
 								width: 100%;
-
-								.going-timestamp {
-									display: flex;
-									flex-direction: row;
-									justify-content: space-between;
-									padding: 12px;
-
-									.going {
-										@extend .bold;
-										@extend .color-blackDark-100;
-										@extend .font-14;
-										@include border-radius(16px);
-
-										background: $yellow-100;
-										display: inline-block;
-										padding: 6px 12px;
-									}
-
-									.timestamp {
-										@extend .font-14;
-
-										display: inline-block;
-										padding: 6px 0;
-										text-shadow: 0 1px $blackDark-50;
-									}
-								}
-
-								.comments-qna {
-									@extend .color-blackDark-75;
-									@include border-radius(8px 8px 0 0);
-
-									backdrop-filter: blur(4px);
-									-webkit-backdrop-filter: blur(4px);
-									background: $white-75;
-									display: flex;
-									flex-direction: column;
-									height: 72px;
-									overflow-y: hidden;
-									margin: 0 8px;
-
-									.card-tabs {
-										backdrop-filter: blur(4px);
-										-webkit-backdrop-filter: blur(4px);
-										background: $white-50;
-										display: flex;
-										flex: none;
-										flex-direction: row;
-
-										.card-tab {
-											@extend .bold;
-											@extend .color-blackDark-50;
-											@extend .font-12;
-											@extend .uppercase;
-
-											padding: 12px 16px 10px;
-
-											&:first-child {
-												margin-left: 16px;
-											}
-
-											&.active {
-												@extend .color-blackDark-75;
-												border-bottom: 2px solid $blackDark-75;
-											}
-										}
-									}
-
-									.comments-qna-list {
-										display: flex;
-										flex-direction: column;
-										padding: 16px;
-
-										.comment-qna {
-											display: flex;
-											flex-direction: row;
-
-											img {
-												@include border-radius(50%);
-												background: $blackDark-50;
-												border: 1px solid $white-50;
-												height: 32px;
-												margin: 0 8px 0 0;
-												width: 32px;
-											}
-
-											.comment-details {
-												display: flex;
-												flex-direction: column;
-												height: auto;
-												width: calc(100% - 32px - 8px);
-
-												.comment-text {
-													display: block;
-													line-height: 20px;
-													margin: 0 0 2px;
-												}
-
-												.comment-meta {
-													@extend .color-blackDark-50;
-													@extend .font-12;
-													display: flex;
-													flex-direction: row;
-
-													li:after {
-														content: "•";
-														padding: 0 4px;
-													}
-
-													li:last-child:after {
-														content: "";
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-
-				.feed-card-half {
-					@extend .color-white-100;
-					@include border-radius(8px);
-
-					background: $blackLight-100;
-					border: 1px solid $white-10;
-					margin-bottom: 8px;
-					width: calc((100% - 40px) / 2);
-
-					&:nth-child(odd) {
-						margin-left: 16px;
-						margin-right: 8px;
-					}
-
-					.feed-card-aspect-ratio {
-						@include border-radius(8px);
-						background-size: cover;
-						display: block;
-						padding-top: calc(16 / 9 * 100%);
-						position: relative;
-
-						.feed-card-content {
-							background: $blackDark-50;
-							@include border-radius(8px);
-							bottom: 0;
-							left: 0;
-							position: absolute;
-							right: 0;
-							top: 0;
-
-							img {
-								height: auto;
-								margin: 12px;
-								width: 64px;
-							}
-
-							.feed-card-text {
-								bottom: 12px;
-								left: 12px;
-								position: absolute;
-								right: 12px;
-								text-align: left;
-
-								.feed-card-title {
-									@extend .font-20;
-									@extend .bold;
-
-									display: block;
-									line-height: 24px;
-									margin-bottom: 4px;
-								}
-
-								.feed-card-meta {
-									display: block;
-									@extend .font-14;
-								}
 							}
 						}
 					}
 
-					&.feed-card-onboarding {
-						@extend .color-blackDark-100;
+					.feed-card-progress {
+						display: flex;
+						flex-direction: row;
+						justify-content: space-between;
+						padding: 8px;
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
 
-						background: $yellow-100;
-						border: 1px solid $blackDark-10;
+						.progress-bar {
+							@include border-radius(2px);
 
-						.feed-card-aspect-ratio .feed-card-content {
-							background: none;
+							background: $white-50;
+							flex-grow: 1;
+							height: 4px;
+							margin: 0 4px 0 0;
 
-						 	.feed-card-text {
-								.feed-card-title {
-									@extend .font-20;
-									@extend .bold;
+							&:last-child {
+								margin: 0;
+							}
 
-									display: block;
-									line-height: 24px;
-									margin-bottom: 4px;
-								}
-
-								.feed-card-meta {
-									@extend .font-14;
-									display: block;
-								}
+							&[data-progress]:after {
+								@include border-radius(2px);
+								background: $white-100;
+								content: "";
+								display: block;
+								height: 100%;
+								width: 50%;
 							}
 						}
 					}
 
-					&.feed-card-add-rating .feed-card-aspect-ratio .feed-card-content {
-						@extend .color-white-50;
+					.feed-card-upper {
+						align-items: center;
+						display: flex;
+						flex-direction: row;
+						justify-content: flex-start;
+						padding: 4px 24px;
 
-						i {
-							left: 8px;
-							position: absolute;
-							top: 8px;
+						position: absolute;
+						top: 24px;
+						left: 0;
+						right: 0;
+
+						.feed-card-rating {
+							height: auto;
+							margin: 0 16px 0 0;
+							width: 64px;
 						}
 
-						.feed-card-text {
+						.feed-card-place-details {
+							text-shadow: 0 1px $blackDark-50;
+							width: calc(100% - 64px - 16px);
+
 							.feed-card-title {
 								@extend .font-20;
 								@extend .bold;
@@ -605,73 +420,323 @@ i {
 								display: block;
 								line-height: 24px;
 								margin-bottom: 4px;
+								overflow: hidden;
+								text-overflow: ellipsis;
+								white-space: nowrap;
+							}
+
+							.feed-card-meta {
+								display: block;
+								@extend .font-14;
+							}
+						}
+					}
+
+					.feed-card-lower {
+						bottom: 0;
+						display: flex;
+						flex-direction: column;
+						position: absolute;
+						width: 100%;
+
+						.going-timestamp {
+							display: flex;
+							flex-direction: row;
+							justify-content: space-between;
+							padding: 12px;
+
+							.going {
+								@extend .bold;
+								@extend .color-blackDark-100;
+								@extend .font-14;
+								@include border-radius(16px);
+
+								background: $yellow-100;
+								display: inline-block;
+								padding: 6px 12px;
+							}
+
+							.timestamp {
+								@extend .font-14;
+
+								display: inline-block;
+								padding: 6px 0;
+								text-shadow: 0 1px $blackDark-50;
+							}
+						}
+
+						.comments-qna {
+							@extend .color-blackDark-75;
+							@include border-radius(8px 8px 0 0);
+
+							backdrop-filter: blur(4px);
+							-webkit-backdrop-filter: blur(4px);
+							background: $white-75;
+							display: flex;
+							flex-direction: column;
+							height: 72px;
+							overflow-y: hidden;
+							margin: 0 8px;
+
+							.card-tabs {
+								backdrop-filter: blur(4px);
+								-webkit-backdrop-filter: blur(4px);
+								background: $white-50;
+								display: flex;
+								flex: none;
+								flex-direction: row;
+
+								.card-tab {
+									@extend .bold;
+									@extend .color-blackDark-50;
+									@extend .font-12;
+									@extend .uppercase;
+
+									padding: 12px 16px 10px;
+
+									&:first-child {
+										margin-left: 16px;
+									}
+
+									&.active {
+										@extend .color-blackDark-75;
+										border-bottom: 2px solid $blackDark-75;
+									}
+								}
+							}
+
+							.comments-qna-list {
+								display: flex;
+								flex-direction: column;
+								padding: 16px;
+
+								.comment-qna {
+									display: flex;
+									flex-direction: row;
+
+									img {
+										@include border-radius(50%);
+										background: $blackDark-50;
+										border: 1px solid $white-50;
+										height: 32px;
+										margin: 0 8px 0 0;
+										width: 32px;
+									}
+
+									.comment-details {
+										display: flex;
+										flex-direction: column;
+										height: auto;
+										width: calc(100% - 32px - 8px);
+
+										.comment-text {
+											display: block;
+											line-height: 20px;
+											margin: 0 0 2px;
+										}
+
+										.comment-meta {
+											@extend .color-blackDark-50;
+											@extend .font-12;
+											display: flex;
+											flex-direction: row;
+
+											li:after {
+												content: "•";
+												padding: 0 4px;
+											}
+
+											li:last-child:after {
+												content: "";
+											}
+										}
+									}
+								}
 							}
 						}
 					}
 				}
+			}
 
-				.feed-breaker {
-					background: $blackLight-100;
-					border-bottom: 1px solid $white-10;
-					border-top: 1px solid $white-10;
-					margin-bottom: 24px;
+			&.in_view .feed-card-aspect-ratio .feed-card-content {
+				.slider .card-img:after {
+					background-color: $blackDark-50;
+					transition: background-color 0.6s;
+				}
 
-					.title {
-						@extend .bold;
-						@extend .color-yellow-100;
-						@extend .font-24;
-						
-						display: block;
-						margin: 24px 24px 16px;
+				.feed-card-progress, .feed-card-upper, .feed-card-lower {
+					opacity: 100%;
+					transition: opacity 0.6s ease-in;
+				}
+			}
+
+			.feed-card-aspect-ratio .feed-card-content {
+				.slider .card-img:after {
+					background-color: $blackDark-75;
+					transition: background-color 0.6s;
+				}
+
+				.feed-card-progress, .feed-card-upper, .feed-card-lower {
+					opacity: 0%;
+					transition: opacity 0.6s ease-out;
+				}
+			}
+		}
+
+		.feed-card-half {
+			@extend .color-white-100;
+			@include border-radius(8px);
+
+			background: $blackLight-100;
+			border: 1px solid $white-10;
+			margin-bottom: 8px;
+			width: calc((100% - 40px) / 2);
+
+			&:nth-child(odd) {
+				margin-left: 16px;
+				margin-right: 8px;
+			}
+
+			.feed-card-aspect-ratio {
+				@include border-radius(8px);
+				background-color: #blackLight-100;
+				background-size: cover;
+				display: block;
+				padding-top: calc(16 / 9 * 100%);
+				position: relative;
+
+				.feed-card-content {
+					background: $blackDark-50;
+					@include border-radius(8px);
+					bottom: 0;
+					left: 0;
+					position: absolute;
+					right: 0;
+					top: 0;
+
+					img {
+						height: auto;
+						margin: 12px;
+						width: 64px;
 					}
 
-					.para {
-						display: block;
-						margin: 0 24px 24px;
-					}
+					.feed-card-text {
+						bottom: 12px;
+						left: 12px;
+						position: absolute;
+						right: 12px;
+						text-align: left;
 
-					.feed-breaker-cards {
-						display: flex;
-						flex-direction: row;
-						flex-wrap: wrap;
-						margin-bottom: 16px;
+						.feed-card-title {
+							@extend .font-20;
+							@extend .bold;
 
-						a {
-							display: none;
+							display: block;
+							line-height: 24px;
+							margin-bottom: 4px;
 						}
+
+						.feed-card-meta {
+							display: block;
+							@extend .font-14;
+						}
+					}
+				}
+			}
+
+			&.feed-card-onboarding {
+				@extend .color-blackDark-100;
+
+				background: $yellow-100;
+				border: 1px solid $blackDark-10;
+
+				.feed-card-aspect-ratio .feed-card-content {
+					background: none;
+
+					.feed-card-text {
+						.feed-card-title {
+							@extend .font-20;
+							@extend .bold;
+
+							display: block;
+							line-height: 24px;
+							margin-bottom: 4px;
+						}
+
+						.feed-card-meta {
+							@extend .font-14;
+							display: block;
+						}
+					}
+				}
+			}
+
+			&.feed-card-add-rating .feed-card-aspect-ratio .feed-card-content {
+				@extend .color-white-50;
+
+				i {
+					left: 8px;
+					position: absolute;
+					top: 8px;
+				}
+
+				.feed-card-text {
+					.feed-card-title {
+						@extend .font-20;
+						@extend .bold;
+
+						display: block;
+						line-height: 24px;
+						margin-bottom: 4px;
 					}
 				}
 			}
 		}
 
-		.page-title {
-			@extend .bold;
-			@extend .font-32;
+		.feed-breaker {
+			background: $blackLight-100;
+			border-bottom: 1px solid $white-10;
+			border-top: 1px solid $white-10;
+			margin-bottom: 24px;
 
-			display: block;
-			margin: 44px 16px 16px;
-		}
+			.title {
+				@extend .bold;
+				@extend .color-yellow-100;
+				@extend .font-24;
 
-		.page-para {
-			margin: 0 16px 32px;
+				display: block;
+				margin: 24px 24px 16px;
+			}
+
+			.para {
+				display: block;
+				margin: 0 24px 24px;
+			}
+
+			.feed-breaker-cards {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				margin-bottom: 16px;
+
+				a {
+					display: none;
+				}
+			}
 		}
 	}
+}
 
-	.back-nav {
-		background: $blackDark-100;
-		left: 0;
-		position: fixed;
-		right: 0;
-		top: 0;
-		z-index: 100;
+.page-title {
+	@extend .bold;
+	@extend .font-32;
 
-		a {
-			display: block;
-			height: 48px;
-			padding: 12px;
-			width: 48px;
-		}
-	}
+	display: block;
+	margin: 44px 16px 16px;
+}
+
+.page-para {
+	margin: 0 16px 32px;
 }
 
 #bottom-nav {
@@ -719,7 +784,7 @@ i {
 	and (-webkit-min-device-pixel-ratio: 3)
 	and (orientation: portrait) {
 		#home {
-			padding: 20px 0 98px;
+			padding: 20px 0 106px;
 		}
 
 		#bottom-nav{
@@ -728,6 +793,11 @@ i {
 	}
 }
 
+// safari 
+
+_::-webkit-full-page-media, _:future, :root .safari_only {
+	min-height: 0;
+}
 
 
 

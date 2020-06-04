@@ -30,11 +30,10 @@
 	<meta name="mobile-web-app-capable" content="yes">
 	<link rel="icon" type="image/png" sizes="192x192"  href="img/icon-192x192.png">
 
-	<link href="style-2020-06-02-5.css" rel="stylesheet">
+	<link href="style-2020-06-04-1.css" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
 
 	<link href="img/favicon.png" rel="shortcut icon">
-
 </head>
 
 <body>
@@ -51,8 +50,13 @@
 				<div class="feed-cards">
 					<ul class="feed-nearby">
 						<li id="best-1" class="feed-card-full feed-card-place">
-							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/Mlj_wDdtEks/750x750/">
+							<span class="feed-card-aspect-ratio">
 								<span class="feed-card-content">
+									<span class="slider">
+										<span class="card-img lazy" data-src="https://source.unsplash.com/Mlj_wDdtEks/750x750/"></span>
+										<span class="card-img lazy" data-src="https://source.unsplash.com/PTRzqc_h1r4/750x750/"></span>
+									</span>
+
 									<span class="feed-card-progress">
 										<span class="progress-bar" data-progress="50"></span>
 										<span class="progress-bar"></span>
@@ -96,8 +100,13 @@
 							</span>
 						</li> <!-- .feed-card-full .feed-card-place -->
 						<li id="best-2" class="feed-card-full feed-card-place">
-							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/xxVtovqDa7M/750x750/">
+							<span class="feed-card-aspect-ratio">
 								<span class="feed-card-content">
+									<span class="slider">
+										<span class="card-img lazy" data-src="https://source.unsplash.com/xxVtovqDa7M/750x750/"></span>
+										<span class="card-img lazy" data-src="https://source.unsplash.com/PTRzqc_h1r4/750x750/"></span>
+									</span>
+
 									<span class="feed-card-progress">
 										<span class="progress-bar" data-progress="50"></span>
 										<span class="progress-bar"></span>
@@ -141,8 +150,13 @@
 							</span>
 						</li> <!-- .feed-card-full .feed-card-place -->
 						<li id="best-3" class="feed-card-full feed-card-place">
-							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/HyU6sLdg2xk/750x750/">
+							<span class="feed-card-aspect-ratio">
 								<span class="feed-card-content">
+									<span class="slider">
+										<span class="card-img lazy" data-src="https://source.unsplash.com/HyU6sLdg2xk/750x750/"></span>
+										<span class="card-img lazy" data-src="https://source.unsplash.com/PTRzqc_h1r4/750x750/"></span>
+									</span>
+
 									<span class="feed-card-progress">
 										<span class="progress-bar" data-progress="50"></span>
 										<span class="progress-bar"></span>
@@ -186,8 +200,13 @@
 							</span>
 						</li> <!-- .feed-card-full .feed-card-place -->
 						<li id="best-4" class="feed-card-full feed-card-place">
-							<span class="feed-card-aspect-ratio lazy" data-src="https://source.unsplash.com/LO7rNP0LRro/750x750/">
+							<span class="feed-card-aspect-ratio">
 								<span class="feed-card-content">
+									<span class="slider">
+										<span class="card-img lazy" data-src="https://source.unsplash.com/LO7rNP0LRro/750x750/"></span>
+										<span class="card-img lazy" data-src="https://source.unsplash.com/PTRzqc_h1r4/750x750/"></span>
+									</span>
+
 									<span class="feed-card-progress">
 										<span class="progress-bar" data-progress="50"></span>
 										<span class="progress-bar"></span>
@@ -263,5 +282,38 @@
 				}
 			});
 		});
+
+		$(function() {
+			$('.lazy').Lazy({
+				appendScroll: $('.slider'),
+				effect: 'fadeIn',
+				effectTime: 600,
+				placeholder: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAADtklEQVRIx22WUZbrOA5DLxj32mcjvYLZ3sS480E5qXrdKh2XrMggCZKw85+//xuYMOEKV/hruMa/wjVc8RpeceJgABTUyi23ee/sszBv55aakgEA+Q6/dx5Az56fnV/Df9l5xrXHc57H7L/z94Hfvexa/PXDCUzR7NGPL5cSMI9RPQ+j1eHgqNlHOTYWDm10jgvnyfiEcf3CfaK1Gg2qqVnP5JODL3OL3sfGMcGJMpcPfWJlsfpcGwebJvaJc52okWiqZSp1eoLz48u1N7O2Q13fW76L7JU+BhAKJXXKfLMCOqJk47nqyWtxVGwsle4iNJQ0JwIfAylTKlNe1T77qlRGuKxAMVAsLRXLvetj4CzklEl65qux0GdTKpQTx4ciN4JSbWm5a8sd7kX400BSprG8lruCyVoSi8KhqBqsHVpb7zO54w23dg7tAIYyd6ZZJm0W/TYplZhKLtsTgcbf6H3XO77hxvuhQaCJGfNqFpomTczBNdXNgT5tWFvd623ferfv+I7vro3ttWCm6/7Y0MRZkzU10WxTXz7toS56ez/zPX3X/8X3LF2ULaaMmY4WJ040zjw2IiGwFGV757h/Pzzd9kRg3y5RW4SJmc5LcU6/OK8VUFOWK2O4PvLBzwo6Zm77PvNPA3kEK8zAC254mW3qYTXGXNhHC9XyEEVvez/G7p8GSB6dDxkcvPFly9RuhwSAuY7g6hbbabXv+qbFG7sGwtFfDN7x9Tkctqa27QKBXtg8sp8lajv6c31mbFI0x7uGjzAaS/YRf8hVrnCE+WnXc/u8IyTPgZh9MUUCOTvJ0cGTnZUWH4piAwdicXPQN5eBzGImJNEk+4IOhsGG4Kw4KjRJDPTK96Rx3+xOTiKz7poxIZMQkpA0mXOaiR63/UCRQq7x8RcnT5gxQ8pMxgyJmSRMThUlX21YqThfHk3DQONS9EF/aBnIMGUmh2oyzMCKwkZnhgxk22qgy+ePOKTX8DMCBgLDoWOcYadz6DE8MTIkktkvKxgdGFoSmlNFGHgiIJBknqwOM7wmzEE3OXlhMdlYfiR+9RAiGwELPRCZjw0ymXypW9q3zWJOwDrDcWjvc5SUwO8q2jyvs5tHMskwE5LOVtB5LeyX4bjZcG34o+gRrgd9vf5eH8aTzcZSHLMKtI3hwEedn+nH3T8iiD9tHPDvmMDnzIIkk+VnI170uOv9xLm2o5/XA3D66BD0HSTzFP1zzqNKfNHPZy7H71w8FPGw9F0k/DC2APn6c87+8Pefw/8D3ENzlWMXj9wAAAAASUVORK5CYII=',
+				threshold: 0,
+				visibleOnly: true,
+				afterLoad: function(element) {
+			  		console.log('image was loaded successfully');
+		  		},
+				onError: function(element) {
+					console.log('error loading ' + element.data('src'));
+				}
+			});
+		});
+
+		let observer = new IntersectionObserver((entries, observer) => { 
+			entries.forEach(entry => {
+				if(entry.isIntersecting){
+					var elem = document.getElementById(entry.target.id);
+					console.log(elem.id + " in");
+					elem.classList.add('in_view');
+					// observer.unobserve(entry.target);
+				} else {
+					var elem = document.getElementById(entry.target.id);
+					console.log(elem.id + " out");
+					elem.classList.remove('in_view');
+				}
+			});
+		}, {rootMargin: "-330px 0px -200px 0px"}, {threshold: 1});
+		document.querySelectorAll('.feed-card-full').forEach(p => { observer.observe(p) });
 	</script>
 </body>
