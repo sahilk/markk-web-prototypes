@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+	<meta http-equiv="cache-control" content="max-age=0" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="pragma" content="no-cache" />
+
+	<meta name="robots" conent="none" />
+	
+	<title>Place 1 — Markk Prototype</title>
+	<meta name="description" content="Get real-time live ratings of places around you. Download now on iOS & Android.">
+
+	<!-- Chrome, Firefox OS and Opera - For Address Bar Color -->
+	<meta name="theme-color" content="#282222">
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<!-- Add to home screen for Safari on iOS -->
+	<meta name="apple-mobile-web-app-title" content="Markk - Live Ratings of Places">
+	<link rel="apple-touch-icon" href="img/icon-192x192.png">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<!-- Add to home screen for Android -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="icon" type="image/png" sizes="192x192"  href="img/icon-192x192.png">
+
+	<link href="style-2020-06-12-1.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
+
+	<link rel="manifest" href="manifest.webmanifest">
+
+	<link href="img/favicon.png" rel="shortcut icon">
+</head>
+
+<body>
+	<div id="app" data-barba="wrapper">
+		<div id="page" class="single" data-barba="container" data-barba-namespace="place-1">
+			<div class="page-feed">
+				<div class="feed-cards">
+					<div id="place-1" class="feed-card-full feed-card-place">
+							<span class="feed-card-aspect-ratio">
+								<span class="feed-card-content">
+									<span class="slider">
+										<span class="card-img lazy" data-src="https://source.unsplash.com/D_Rfjj3XV8M/750x750/"></span>
+										<span class="card-img lazy" data-src="https://source.unsplash.com/0yqa0rMCsYk/750x750/"></span>
+									</span> <!-- .slider -->
+									<span class="feed-card-progress">
+										<a class="index-link" href="index.html">link</a>
+										<span class="progress-bar" data-progress="50"></span>
+										<span class="progress-bar"></span>
+										<span class="progress-bar"></span>
+									</span> <!-- .feed-card-progress -->
+									<span class="feed-card-upper">
+										<img class="feed-card-rating" src="img/rating-dope.png">
+										<span class="feed-card-place-details">
+											<span class="feed-card-title">Independence Brewing Co</span>
+											<span class="feed-card-meta">Microbrewery • 2 mi</span>
+										</span>
+									</span> <!-- .feed-card-upper -->
+									<span class="feed-card-actions">
+										<ul class="actions-list">
+											<li class="action-item"><i class="material-icons-round color-blackDark-75">share</i></li>
+											<li class="action-item"><i class="material-icons-round color-blackDark-75">unfold_more</i></li>
+											<li class="action-item"><i class="material-icons-round color-blackDark-75">more_horiz</i></li>
+										</ul>
+									</span> <!-- .feed-card-actions -->
+									<span class="feed-card-lower">
+										<ul class="going-timestamp">
+											<li class="going">24 Going</li>
+											<li class="timestamp">Rating by @sahilk • 5 mins</li>
+										</ul>
+										<span class="comments-qna">
+											<ul class="card-tabs">
+												<li class="card-tab active"><a href="#">All</a></li>
+												<li class="card-tab"><a href="#">3 Asks</a></li>
+												<li class="card-tab"><a href="#">5 Comments</a></li>
+											</ul>
+											<ul class="comments-qna-list">
+												<li class="comment-qna">
+													<img class="lazy" data-src="https://source.unsplash.com/hh3ViD0r0Rc/32x32/">
+													<span class="comment-details">
+														<span class="comment-text">Can you check if they have the tacos today?</span>
+														<ul class="comment-meta">
+															<li>@luis_v</li>
+															<li>5 mins</li>
+															<li>Delete</li>
+														</ul>
+													</span>
+												</li>
+											</ul> <!-- .comments-qna-list -->
+										</span>
+									</span> <!-- .feed-card-lower -->
+								</span>
+							</span>
+					</div> <!-- .feed-card-full .feed-card-place -->
+				</div> <!-- .feed-cards -->
+			</div> <!-- .page-feed -->
+		</div> <!-- #page -->
+	</div> <!-- #app -->
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+	<script src="https://unpkg.com/@barba/core"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+	<script type="text/javascript">
+		// iphone identifier
+		var classNames = [];
+		if (navigator.userAgent.match(/(iPad|iPhone|iPod)/i)) classNames.push('device-ios');
+		if (navigator.userAgent.match(/android/i)) classNames.push('device-android');
+		var html = document.getElementsByTagName('html')[0];
+		if (classNames.length) classNames.push('on-device');
+		if (html.classList) html.classList.add.apply(html.classList, classNames);
+
+		// lazy load
+		$(function() {
+			$('.lazy').Lazy({
+				effect: 'fadeIn',
+				effectTime: 600,
+				placeholder: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAADtklEQVRIx22WUZbrOA5DLxj32mcjvYLZ3sS480E5qXrdKh2XrMggCZKw85+//xuYMOEKV/hruMa/wjVc8RpeceJgABTUyi23ee/sszBv55aakgEA+Q6/dx5Az56fnV/Df9l5xrXHc57H7L/z94Hfvexa/PXDCUzR7NGPL5cSMI9RPQ+j1eHgqNlHOTYWDm10jgvnyfiEcf3CfaK1Gg2qqVnP5JODL3OL3sfGMcGJMpcPfWJlsfpcGwebJvaJc52okWiqZSp1eoLz48u1N7O2Q13fW76L7JU+BhAKJXXKfLMCOqJk47nqyWtxVGwsle4iNJQ0JwIfAylTKlNe1T77qlRGuKxAMVAsLRXLvetj4CzklEl65qux0GdTKpQTx4ciN4JSbWm5a8sd7kX400BSprG8lruCyVoSi8KhqBqsHVpb7zO54w23dg7tAIYyd6ZZJm0W/TYplZhKLtsTgcbf6H3XO77hxvuhQaCJGfNqFpomTczBNdXNgT5tWFvd623ferfv+I7vro3ttWCm6/7Y0MRZkzU10WxTXz7toS56ez/zPX3X/8X3LF2ULaaMmY4WJ040zjw2IiGwFGV757h/Pzzd9kRg3y5RW4SJmc5LcU6/OK8VUFOWK2O4PvLBzwo6Zm77PvNPA3kEK8zAC254mW3qYTXGXNhHC9XyEEVvez/G7p8GSB6dDxkcvPFly9RuhwSAuY7g6hbbabXv+qbFG7sGwtFfDN7x9Tkctqa27QKBXtg8sp8lajv6c31mbFI0x7uGjzAaS/YRf8hVrnCE+WnXc/u8IyTPgZh9MUUCOTvJ0cGTnZUWH4piAwdicXPQN5eBzGImJNEk+4IOhsGG4Kw4KjRJDPTK96Rx3+xOTiKz7poxIZMQkpA0mXOaiR63/UCRQq7x8RcnT5gxQ8pMxgyJmSRMThUlX21YqThfHk3DQONS9EF/aBnIMGUmh2oyzMCKwkZnhgxk22qgy+ePOKTX8DMCBgLDoWOcYadz6DE8MTIkktkvKxgdGFoSmlNFGHgiIJBknqwOM7wmzEE3OXlhMdlYfiR+9RAiGwELPRCZjw0ymXypW9q3zWJOwDrDcWjvc5SUwO8q2jyvs5tHMskwE5LOVtB5LeyX4bjZcG34o+gRrgd9vf5eH8aTzcZSHLMKtI3hwEedn+nH3T8iiD9tHPDvmMDnzIIkk+VnI170uOv9xLm2o5/XA3D66BD0HSTzFP1zzqNKfNHPZy7H71w8FPGw9F0k/DC2APn6c87+8Pefw/8D3ENzlWMXj9wAAAAASUVORK5CYII=',
+				threshold: 0,
+				visibleOnly: true,
+				afterLoad: function(element) {
+			  		console.log('image was loaded successfully');
+		  		},
+				onError: function(element) {
+					console.log('error loading ' + element.data('src'));
+				}
+			});
+		});
+		$(function() {
+			$('.lazy').Lazy({
+				appendScroll: $('.slider'),
+				effect: 'fadeIn',
+				effectTime: 600,
+				placeholder: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAADtklEQVRIx22WUZbrOA5DLxj32mcjvYLZ3sS480E5qXrdKh2XrMggCZKw85+//xuYMOEKV/hruMa/wjVc8RpeceJgABTUyi23ee/sszBv55aakgEA+Q6/dx5Az56fnV/Df9l5xrXHc57H7L/z94Hfvexa/PXDCUzR7NGPL5cSMI9RPQ+j1eHgqNlHOTYWDm10jgvnyfiEcf3CfaK1Gg2qqVnP5JODL3OL3sfGMcGJMpcPfWJlsfpcGwebJvaJc52okWiqZSp1eoLz48u1N7O2Q13fW76L7JU+BhAKJXXKfLMCOqJk47nqyWtxVGwsle4iNJQ0JwIfAylTKlNe1T77qlRGuKxAMVAsLRXLvetj4CzklEl65qux0GdTKpQTx4ciN4JSbWm5a8sd7kX400BSprG8lruCyVoSi8KhqBqsHVpb7zO54w23dg7tAIYyd6ZZJm0W/TYplZhKLtsTgcbf6H3XO77hxvuhQaCJGfNqFpomTczBNdXNgT5tWFvd623ferfv+I7vro3ttWCm6/7Y0MRZkzU10WxTXz7toS56ez/zPX3X/8X3LF2ULaaMmY4WJ040zjw2IiGwFGV757h/Pzzd9kRg3y5RW4SJmc5LcU6/OK8VUFOWK2O4PvLBzwo6Zm77PvNPA3kEK8zAC254mW3qYTXGXNhHC9XyEEVvez/G7p8GSB6dDxkcvPFly9RuhwSAuY7g6hbbabXv+qbFG7sGwtFfDN7x9Tkctqa27QKBXtg8sp8lajv6c31mbFI0x7uGjzAaS/YRf8hVrnCE+WnXc/u8IyTPgZh9MUUCOTvJ0cGTnZUWH4piAwdicXPQN5eBzGImJNEk+4IOhsGG4Kw4KjRJDPTK96Rx3+xOTiKz7poxIZMQkpA0mXOaiR63/UCRQq7x8RcnT5gxQ8pMxgyJmSRMThUlX21YqThfHk3DQONS9EF/aBnIMGUmh2oyzMCKwkZnhgxk22qgy+ePOKTX8DMCBgLDoWOcYadz6DE8MTIkktkvKxgdGFoSmlNFGHgiIJBknqwOM7wmzEE3OXlhMdlYfiR+9RAiGwELPRCZjw0ymXypW9q3zWJOwDrDcWjvc5SUwO8q2jyvs5tHMskwE5LOVtB5LeyX4bjZcG34o+gRrgd9vf5eH8aTzcZSHLMKtI3hwEedn+nH3T8iiD9tHPDvmMDnzIIkk+VnI170uOv9xLm2o5/XA3D66BD0HSTzFP1zzqNKfNHPZy7H71w8FPGw9F0k/DC2APn6c87+8Pefw/8D3ENzlWMXj9wAAAAASUVORK5CYII=',
+				threshold: 0,
+				visibleOnly: true,
+				afterLoad: function(element) {
+			  		console.log('image was loaded successfully');
+		  		},
+				onError: function(element) {
+					console.log('error loading ' + element.data('src'));
+				}
+			});
+		});
+
+		// delegate href to block element
+		$(document).delegate(".home-summary", "click", function() {
+			window.location = $(this).find("a").attr("href");
+		});
+		$(document).delegate(".feed-card-progress", "click", function() {
+			window.location = $(this).find("a.index-link").attr("href");
+		});
+
+		// detect viewport visibility of element
+		let observer = new IntersectionObserver((entries, observer) => { 
+			entries.forEach(entry => {
+				if(entry.isIntersecting){
+					var elem = document.getElementById(entry.target.id);
+					console.log(elem.id + " in");
+					elem.classList.add('in_view');
+				} else {
+					var elem = document.getElementById(entry.target.id);
+					console.log(elem.id + " out");
+					elem.classList.remove('in_view');
+				}
+			});
+		}, {rootMargin: "-330px 0px -300px 0px"}, {threshold: 1});
+		document.querySelectorAll('.feed-card-full').forEach(p => { observer.observe(p) });
+
+		//page transitions
+		barba.init({
+			transitions: [{
+				sync: true,
+				name: 'open-comments',
+				leave() {
+					
+				},
+				enter() {
+					
+				}
+			}]
+		});
+	</script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

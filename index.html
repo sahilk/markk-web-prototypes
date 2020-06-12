@@ -30,7 +30,7 @@
 	<meta name="mobile-web-app-capable" content="yes">
 	<link rel="icon" type="image/png" sizes="192x192"  href="img/icon-192x192.png">
 
-	<link href="style-2020-06-04-1.css" rel="stylesheet">
+	<link href="style-2020-06-12-1.css" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet">
 
 	<link rel="manifest" href="manifest.webmanifest">
@@ -39,17 +39,68 @@
 </head>
 
 <body>
-	<div id="app">
-		<div id="home">
+	<div id="app" data-barba="wrapper">
+		<div id="home" data-barba="container" data-barba-namespace="home">
 			<!-- <ul class="home-nav">
 				<li class="btn btn-regular btn-icon-text"><a href="#"><i class="material-icons-round color-yellow-100">monetization_on</i><span>Get Points</span></a></li>
 				<li class="btn btn-regular btn-icon"><a href="#"><i class="material-icons-round color-white-100">chat</i></a></li>
 			</ul> --> <!-- .home-nav -->
 
-			<div class="home-intro">
-				<img src="img/logo.svg">
-				<p>A real-time visual feed of what’s happening around you.</p>
-			</div> <!-- .home-intro -->
+			<div class="home-guru-section">
+				<div class="home-intro">
+					<img src="img/logo.svg">
+					<p>A <strong>real-time visual feed</strong> of what’s happening <strong>around you</strong>.</p>
+				</div> <!-- .home-intro -->
+
+				<div class="become-guru">
+					<strong>— Become a Markk Guru</strong>
+					<a href="#"><i class="material-icons-round color-white-25">help_outline</i></a>
+				</div>
+
+				<div class="become-guru-gif">
+					<img src="img/become-guru.gif">
+				</div>
+
+				<hr>
+
+				<div class="guru-progress">
+					<strong>Level 1 • 500 Points</strong>
+					<span>9 conversions left</span>
+				</div>
+
+				<div class="guru-progress-bar">
+					<img src="img/badge-mini-guru-0.png">
+					<div class="progress-bar" data-progress="50"></div>
+					<img src="img/badge-mini-guru-1.png">
+				</div>
+
+				<hr>
+
+				<div class="top-guru-intro">
+					<strong>— Become a Markk Guru</strong>
+					<p>Combined, they’ve referred 342 users to businesses. Real. Influence. Gurus unlock a follow button on their profile. ☀</p>
+				</div>
+
+				<ul class="top-gurus">
+					<li class="guru">
+						<img src="img/guru-@abrowntable.jpg">
+						<span class="guru-details">
+							<span class="guru-handle">@abrowntable</span>
+							<span class="guru-level">Guru Level 3</span>
+						</span>
+					</li>
+
+					<li class="guru">
+						<img src="img/guru-@katie_leung.jpg">
+						<span class="guru-details">
+							<span class="guru-handle">@katie_leung</span>
+							<span class="guru-level">Guru Level 2</span>
+						</span>
+					</li>
+				</ul>
+
+				<button><i class="material-icons-round color-white-75">expand_less</i></button>
+			</div>
 
 			<ul class="home-summaries">
 				<li class="home-summary"><a href="highlights-best.html"><img class="lazy" data-src="https://source.unsplash.com/O453M2Liufs/64x64/"><span class="summary-text">Best of Markk</span></a></li>
@@ -73,13 +124,12 @@
 									<span class="slider">
 										<span class="card-img lazy" data-src="https://source.unsplash.com/D_Rfjj3XV8M/750x750/"></span>
 										<span class="card-img lazy" data-src="https://source.unsplash.com/0yqa0rMCsYk/750x750/"></span>
-									</span>
-
+									</span> <!-- .slider -->
 									<span class="feed-card-progress">
 										<span class="progress-bar" data-progress="50"></span>
 										<span class="progress-bar"></span>
 										<span class="progress-bar"></span>
-									</span>
+									</span> <!-- .feed-card-progress -->
 									<span class="feed-card-upper">
 										<img class="feed-card-rating" src="img/rating-dope.png">
 										<span class="feed-card-place-details">
@@ -87,12 +137,20 @@
 											<span class="feed-card-meta">Microbrewery • 2 mi</span>
 										</span>
 									</span> <!-- .feed-card-upper -->
+									<span class="feed-card-actions">
+										<ul class="actions-list">
+											<li class="action-item"><i class="material-icons-round color-blackDark-75">share</i></li>
+											<li class="action-item"><i class="material-icons-round color-blackDark-75">unfold_more</i></li>
+											<li class="action-item"><i class="material-icons-round color-blackDark-75">more_horiz</i></li>
+										</ul>
+									</span> <!-- .feed-card-actions -->
 									<span class="feed-card-lower">
 										<ul class="going-timestamp">
 											<li class="going">24 Going</li>
 											<li class="timestamp">Rating by @sahilk • 5 mins</li>
 										</ul>
 										<span class="comments-qna">
+											<a class="comments-link" href="place-1.html">link</a>
 											<ul class="card-tabs">
 												<li class="card-tab active"><a href="#">All</a></li>
 												<li class="card-tab"><a href="#">3 Asks</a></li>
@@ -123,13 +181,12 @@
 									<span class="slider">
 										<span class="card-img lazy" data-src="https://source.unsplash.com/DmO35dvwC0I/750x750/"></span>
 										<span class="card-img lazy" data-src="https://source.unsplash.com/W3SEyZODn8U/750x750/"></span>
-									</span>
-
+									</span> <!-- .slider -->
 									<span class="feed-card-progress">
 										<span class="progress-bar" data-progress="50"></span>
 										<span class="progress-bar"></span>
 										<span class="progress-bar"></span>
-									</span>
+									</span> <!-- .feed-cards-progress -->
 									<span class="feed-card-upper">
 										<img class="feed-card-rating" src="img/rating-nope.png">
 										<span class="feed-card-place-details">
@@ -137,6 +194,13 @@
 											<span class="feed-card-meta">Restaurant • 2 mi</span>
 										</span>
 									</span> <!-- .feed-card-upper -->
+									<span class="feed-card-actions">
+										<ul class="actions-list">
+											<li class="action-item"><i class="material-icons-round color-blackDark-75">share</i></li>
+											<li class="action-item"><i class="material-icons-round color-blackDark-75">unfold_more</i></li>
+											<li class="action-item"><i class="material-icons-round color-blackDark-75">more_horiz</i></li>
+										</ul>
+									</span> <!-- .feed-card-actions -->
 									<span class="feed-card-lower">
 										<ul class="going-timestamp">
 											<li class="going">24 Going</li>
@@ -228,13 +292,12 @@
 									<span class="slider">
 										<span class="card-img lazy" data-src="https://source.unsplash.com/tKN1WXrzQ3s/750x750/"></span>
 										<span class="card-img lazy" data-src="https://source.unsplash.com/U0PiIS4Uvkc/750x750/"></span>
-									</span>
-
+									</span> <!-- .slider -->
 									<span class="feed-card-progress">
 										<span class="progress-bar" data-progress="50"></span>
 										<span class="progress-bar"></span>
 										<span class="progress-bar"></span>
-									</span>
+									</span> <!-- .feed-card-progress -->
 									<span class="feed-card-upper">
 										<img class="feed-card-rating" src="img/rating-okay.png">
 										<span class="feed-card-place-details">
@@ -242,6 +305,13 @@
 											<span class="feed-card-meta">Cafe • 2 mi</span>
 										</span>
 									</span> <!-- .feed-card-upper -->
+									<span class="feed-card-actions">
+										<ul class="actions-list">
+											<li class="action-item"><i class="material-icons-round color-blackDark-75">share</i></li>
+											<li class="action-item"><i class="material-icons-round color-blackDark-75">unfold_more</i></li>
+											<li class="action-item"><i class="material-icons-round color-blackDark-75">more_horiz</i></li>
+										</ul>
+									</span> <!-- .feed-card-actions -->
 									<span class="feed-card-lower">
 										<ul class="going-timestamp">
 											<li class="going">24 Going</li>
@@ -278,13 +348,12 @@
 									<span class="slider">
 										<span class="card-img lazy" data-src="https://source.unsplash.com/nC6CyrVBtkU/750x750/"></span>
 										<span class="card-img lazy" data-src="https://source.unsplash.com/PTRzqc_h1r4/750x750/"></span>
-									</span>
-
+									</span> <!-- .slider -->
 									<span class="feed-card-progress">
 										<span class="progress-bar" data-progress="50"></span>
 										<span class="progress-bar"></span>
 										<span class="progress-bar"></span>
-									</span>
+									</span> <!-- .feed-card-progress -->
 									<span class="feed-card-upper">
 										<img class="feed-card-rating" src="img/rating-okay.png">
 										<span class="feed-card-place-details">
@@ -292,6 +361,13 @@
 											<span class="feed-card-meta">Coworking Space • 2 mi</span>
 										</span>
 									</span> <!-- .feed-card-upper -->
+									<span class="feed-card-actions">
+										<ul class="actions-list">
+											<li class="action-item"><i class="material-icons-round color-blackDark-75">share</i></li>
+											<li class="action-item"><i class="material-icons-round color-blackDark-75">unfold_more</i></li>
+											<li class="action-item"><i class="material-icons-round color-blackDark-75">more_horiz</i></li>
+										</ul>
+									</span> <!-- .feed-card-actions -->
 									<span class="feed-card-lower">
 										<ul class="going-timestamp">
 											<li class="going">24 Going</li>
@@ -339,20 +415,21 @@
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+	<script src="https://unpkg.com/@barba/core"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
 	<script type="text/javascript">
+		// iphone identifier
 		var classNames = [];
 		if (navigator.userAgent.match(/(iPad|iPhone|iPod)/i)) classNames.push('device-ios');
 		if (navigator.userAgent.match(/android/i)) classNames.push('device-android');
-
 		var html = document.getElementsByTagName('html')[0];
-
 		if (classNames.length) classNames.push('on-device');
 		if (html.classList) html.classList.add.apply(html.classList, classNames);
 
+		// lazy load
 		$(function() {
 			$('.lazy').Lazy({
 				effect: 'fadeIn',
-				effectTime: 600,
 				placeholder: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAADtklEQVRIx22WUZbrOA5DLxj32mcjvYLZ3sS480E5qXrdKh2XrMggCZKw85+//xuYMOEKV/hruMa/wjVc8RpeceJgABTUyi23ee/sszBv55aakgEA+Q6/dx5Az56fnV/Df9l5xrXHc57H7L/z94Hfvexa/PXDCUzR7NGPL5cSMI9RPQ+j1eHgqNlHOTYWDm10jgvnyfiEcf3CfaK1Gg2qqVnP5JODL3OL3sfGMcGJMpcPfWJlsfpcGwebJvaJc52okWiqZSp1eoLz48u1N7O2Q13fW76L7JU+BhAKJXXKfLMCOqJk47nqyWtxVGwsle4iNJQ0JwIfAylTKlNe1T77qlRGuKxAMVAsLRXLvetj4CzklEl65qux0GdTKpQTx4ciN4JSbWm5a8sd7kX400BSprG8lruCyVoSi8KhqBqsHVpb7zO54w23dg7tAIYyd6ZZJm0W/TYplZhKLtsTgcbf6H3XO77hxvuhQaCJGfNqFpomTczBNdXNgT5tWFvd623ferfv+I7vro3ttWCm6/7Y0MRZkzU10WxTXz7toS56ez/zPX3X/8X3LF2ULaaMmY4WJ040zjw2IiGwFGV757h/Pzzd9kRg3y5RW4SJmc5LcU6/OK8VUFOWK2O4PvLBzwo6Zm77PvNPA3kEK8zAC254mW3qYTXGXNhHC9XyEEVvez/G7p8GSB6dDxkcvPFly9RuhwSAuY7g6hbbabXv+qbFG7sGwtFfDN7x9Tkctqa27QKBXtg8sp8lajv6c31mbFI0x7uGjzAaS/YRf8hVrnCE+WnXc/u8IyTPgZh9MUUCOTvJ0cGTnZUWH4piAwdicXPQN5eBzGImJNEk+4IOhsGG4Kw4KjRJDPTK96Rx3+xOTiKz7poxIZMQkpA0mXOaiR63/UCRQq7x8RcnT5gxQ8pMxgyJmSRMThUlX21YqThfHk3DQONS9EF/aBnIMGUmh2oyzMCKwkZnhgxk22qgy+ePOKTX8DMCBgLDoWOcYadz6DE8MTIkktkvKxgdGFoSmlNFGHgiIJBknqwOM7wmzEE3OXlhMdlYfiR+9RAiGwELPRCZjw0ymXypW9q3zWJOwDrDcWjvc5SUwO8q2jyvs5tHMskwE5LOVtB5LeyX4bjZcG34o+gRrgd9vf5eH8aTzcZSHLMKtI3hwEedn+nH3T8iiD9tHPDvmMDnzIIkk+VnI170uOv9xLm2o5/XA3D66BD0HSTzFP1zzqNKfNHPZy7H71w8FPGw9F0k/DC2APn6c87+8Pefw/8D3ENzlWMXj9wAAAAASUVORK5CYII=',
 				threshold: 0,
 				visibleOnly: true,
@@ -364,12 +441,10 @@
 				}
 			});
 		});
-
 		$(function() {
 			$('.lazy').Lazy({
 				appendScroll: $('.slider'),
 				effect: 'fadeIn',
-				effectTime: 600,
 				placeholder: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAADtklEQVRIx22WUZbrOA5DLxj32mcjvYLZ3sS480E5qXrdKh2XrMggCZKw85+//xuYMOEKV/hruMa/wjVc8RpeceJgABTUyi23ee/sszBv55aakgEA+Q6/dx5Az56fnV/Df9l5xrXHc57H7L/z94Hfvexa/PXDCUzR7NGPL5cSMI9RPQ+j1eHgqNlHOTYWDm10jgvnyfiEcf3CfaK1Gg2qqVnP5JODL3OL3sfGMcGJMpcPfWJlsfpcGwebJvaJc52okWiqZSp1eoLz48u1N7O2Q13fW76L7JU+BhAKJXXKfLMCOqJk47nqyWtxVGwsle4iNJQ0JwIfAylTKlNe1T77qlRGuKxAMVAsLRXLvetj4CzklEl65qux0GdTKpQTx4ciN4JSbWm5a8sd7kX400BSprG8lruCyVoSi8KhqBqsHVpb7zO54w23dg7tAIYyd6ZZJm0W/TYplZhKLtsTgcbf6H3XO77hxvuhQaCJGfNqFpomTczBNdXNgT5tWFvd623ferfv+I7vro3ttWCm6/7Y0MRZkzU10WxTXz7toS56ez/zPX3X/8X3LF2ULaaMmY4WJ040zjw2IiGwFGV757h/Pzzd9kRg3y5RW4SJmc5LcU6/OK8VUFOWK2O4PvLBzwo6Zm77PvNPA3kEK8zAC254mW3qYTXGXNhHC9XyEEVvez/G7p8GSB6dDxkcvPFly9RuhwSAuY7g6hbbabXv+qbFG7sGwtFfDN7x9Tkctqa27QKBXtg8sp8lajv6c31mbFI0x7uGjzAaS/YRf8hVrnCE+WnXc/u8IyTPgZh9MUUCOTvJ0cGTnZUWH4piAwdicXPQN5eBzGImJNEk+4IOhsGG4Kw4KjRJDPTK96Rx3+xOTiKz7poxIZMQkpA0mXOaiR63/UCRQq7x8RcnT5gxQ8pMxgyJmSRMThUlX21YqThfHk3DQONS9EF/aBnIMGUmh2oyzMCKwkZnhgxk22qgy+ePOKTX8DMCBgLDoWOcYadz6DE8MTIkktkvKxgdGFoSmlNFGHgiIJBknqwOM7wmzEE3OXlhMdlYfiR+9RAiGwELPRCZjw0ymXypW9q3zWJOwDrDcWjvc5SUwO8q2jyvs5tHMskwE5LOVtB5LeyX4bjZcG34o+gRrgd9vf5eH8aTzcZSHLMKtI3hwEedn+nH3T8iiD9tHPDvmMDnzIIkk+VnI170uOv9xLm2o5/XA3D66BD0HSTzFP1zzqNKfNHPZy7H71w8FPGw9F0k/DC2APn6c87+8Pefw/8D3ENzlWMXj9wAAAAASUVORK5CYII=',
 				threshold: 0,
 				visibleOnly: true,
@@ -382,20 +457,24 @@
 			});
 		});
 
+		// delegate href to block element
 		$(document).delegate(".home-summary", "click", function() {
 			window.location = $(this).find("a").attr("href");
+		});
+		$(document).delegate(".comments-qna", "click", function() {
+			window.location = $(this).find("a.comments-link").attr("href");
 		});
 		$(document).delegate(".feed-card-half", "click", function() {
 			window.location = $(this).find("a").attr("href");
 		});
 
+		// detect viewport visibility of element
 		let observer = new IntersectionObserver((entries, observer) => { 
 			entries.forEach(entry => {
 				if(entry.isIntersecting){
 					var elem = document.getElementById(entry.target.id);
 					console.log(elem.id + " in");
 					elem.classList.add('in_view');
-					// observer.unobserve(entry.target);
 				} else {
 					var elem = document.getElementById(entry.target.id);
 					console.log(elem.id + " out");
@@ -404,5 +483,39 @@
 			});
 		}, {rootMargin: "-330px 0px -300px 0px"}, {threshold: 1});
 		document.querySelectorAll('.feed-card-full').forEach(p => { observer.observe(p) });
+
+		//page transitions
+		barba.init({
+			transitions: [{
+				sync: true,
+				name: 'open-comments',
+				leave(data) {
+					return gsap.to('.feed-card-full', {
+						rotation: 45
+					});
+				},
+				enter(data) {
+					return gsap.from('.feed-card-full', {
+						rotation: 90
+					});
+				}
+			}]
+		});
 	</script>
 </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
